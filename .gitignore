@@ -1,0 +1,27 @@
+# Project instructions (never deployed or tracked)
+CLAUDE.md
+.claude/
+
+# macOS
+.DS_Store
+._*
+
+# Secrets and local config
+.env
+.env.*
+*.local.*
+config/database.php
+
+# Dumps, logs, backups
+*.sql
+*.csv
+*.log
+*.bak
+
+# Dependencies and build output
+node_modules/
+vendor/
+
+# Editors
+.vscode/
+.idea/
