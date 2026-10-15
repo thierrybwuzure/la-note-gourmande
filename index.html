@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>La Note Gourmande</title>
+</head>
+<body>
+<body>
+    <header class="header">
+
+        <div class="logo">
+            <img src="assets/logo/la-note-gourmande-noir-or_v2.png">
+            <a href="/home">La Note Gourmande</a>
+        </div>
+
+        <div>
+            
+        </div>
+
+        <input type="checkbox" id="menu-toggle">
+
+        <label for="menu-toggle" class="burger">☰</label>
+
+        <nav class="nav">
+            <a href="/home">Accueil</a>
+            <a href="/catalogue">Catalogue</a>
+            <?php if (isset($_SESSION['admin']) && $_SESSION['admin']): ?>
+            <a href="/dashboard">Dashboard</a>
+            <?php else: ?>
+            <a href="/dashboard">Mon Compte</a>
+            <?php endif; ?>
+        </nav>
+
+    </header>
+</body>
+</html>
