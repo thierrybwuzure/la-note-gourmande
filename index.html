@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>La Note Gourmande — Recettes du monde</title>
+  <meta name="description" content="Recettes des cuisines du monde, testées par deux blogueurs, notées et commentées par la communauté.">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/image/la-note-gourmande-favicon/favicon-32.png">
+  <link rel="apple-touch-icon" href="assets/image/la-note-gourmande-favicon/apple-touch-icon.png">
+  <link rel="stylesheet" href="style.css">
+  <script src="js/site.js"></script>
+</head>
+<body>
+
+<a class="lien-evitement" href="#contenu">Aller au contenu</a>
+
+<!-- En-tête commun (plus tard header.php) : même code que sur catalogue.html -->
+<header class="entete">
+  <a href="index.html" class="entete__logo"><img src="assets/image/logo/la-note-gourmande-noir-or_v1.png" alt="La Note Gourmande, accueil" height="48"></a>
+  <nav class="entete__nav" aria-label="Menu principal">
+    <ul>
+      <li><a href="index.html" aria-current="page">Accueil</a></li>
+      <li><a href="catalogue.html">Recettes</a></li>
+      <!-- À ajouter quand les pages existent : Le voyage, Qui sommes-nous ? -->
+    </ul>
+  </nav>
+  <button type="button" class="burger" aria-label="Ouvrir le menu" aria-haspopup="dialog" aria-controls="menu">☰</button>
+</header>
+
+<dialog id="menu" class="menu" aria-label="Menu principal">
+  <div class="menu__entete">
+    <strong>Menu</strong>
+    <button type="button" class="menu__fermer" aria-label="Fermer le menu">✕</button>
+  </div>
+  <ul>
+    <li><a href="index.html" aria-current="page">Accueil</a></li>
+    <li><a href="catalogue.html">Recettes</a></li>
+  </ul>
+</dialog>
+
+<main id="contenu" class="conteneur">
+
+  <section class="accroche" aria-labelledby="titre-accueil">
+    <h1 id="titre-accueil">Les cuisines du monde, une recette à la fois</h1>
+    <p>Deux blogueurs testent chaque plat avant de le publier. Vous le cuisinez, vous le notez, vous dites ce qu'il faut changer.</p>
+    <a class="btn btn--or" href="catalogue.html">Voir toutes les recettes</a>
+  </section>
+
+  <section aria-labelledby="titre-atouts">
+    <h2 id="titre-atouts" class="sr-only">Pourquoi La Note Gourmande</h2>
+    <ul class="atouts">
+      <li>
+        <h3>Voyager</h3>
+        <p>Des plats de cinq grandes régions du monde, réalisables à la maison.</p>
+      </li>
+      <li>
+        <h3>Choisir</h3>
+        <p>Les notes et les retours de ceux qui l'ont testée disent si la recette est fiable.</p>
+      </li>
+      <li>
+        <h3>Partager</h3>
+        <p>Notez, commentez, et votez pour les commentaires les plus utiles.</p>
+      </li>
+    </ul>
+  </section>
+
+</main>
+
+<!-- Pied de page commun (plus tard footer.php) -->
+<footer class="pied">
+  <p>© 2026 La Note Gourmande · Recettes du monde</p>
+</footer>
+
+</body>
+</html>

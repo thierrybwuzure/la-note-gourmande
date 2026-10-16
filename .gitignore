@@ -25,3 +25,6 @@ vendor/
 # Editors
 .vscode/
 .idea/
+
+# Playwright output
+.playwright-mcp/

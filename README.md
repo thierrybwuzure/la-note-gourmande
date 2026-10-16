@@ -2,7 +2,7 @@
 
 Blog de recettes des cuisines du monde : deux blogueurs publient des recettes sous forme d'articles, et les lecteurs inscrits les notent, les commentent et votent sur les commentaires.
 
-> Projet du module d'analyse web (ADB). État : phase de conception, le code n'est pas encore commencé. La technologie sera choisie selon les consignes du cours (WordPress, PHP/MySQL ou framework).
+> Projet du module d'analyse web (ADB). État : maquettes HTML/CSS statiques (accueil et catalogue), sans base de données ni PHP. La technologie finale sera choisie selon les consignes du cours (WordPress, PHP/MySQL ou framework).
 
 ## Concept
 
@@ -63,12 +63,16 @@ Identité partie du logo : noir `#151412`, or `#D8B23C`, blanc cassé `#F5F2EA`.
 ## Contenu du dépôt
 
 ```
+index.html                      page d'accueil (maquette statique)
+catalogue.html                  catalogue : recherche, tri, filtres combinables, cartes, pagination
+style.css                       feuille de style commune (mobile-first, mode clair et sombre)
+js/site.js                      menu mobile, panneau de filtres, compteur de filtres, tri
 assets/
-  logo/                         logos pour fonds sombres
-  la-note-gourmande-favicon/    jeu de favicons (16 à 512 px, .ico)
+  image/logo/                   logos pour fonds sombres (PNG)
+  image/la-note-gourmande-favicon/   jeu de favicons (16 à 512 px)
+  fonts/                        Bricolage Grotesque et DM Sans, auto-hébergées (sous-ensemble latin)
   wireframe-layout.png          wireframe de référence (zones A à G)
-index.html, style.css           page d'accueil de départ
-design_layout.md                notes de mise en page
+design_layout.md                notes de mise en page, échelle φ et choix de conception
 ```
 
 Le wireframe vient du module d'analyse web et porte une autre marque : il sert de référence de structure, pas de contenu final.
@@ -76,6 +80,15 @@ Le wireframe vient du module d'analyse web et porte une autre marque : il sert d
 ## Organisation
 
 Git (GitHub) pour le code, Trello pour le suivi, Figma pour les maquettes. Livrables : cahier des charges, maquettes et guide de style, schéma de la base, site fonctionnel avec contenu de démonstration, README et documentation d'installation, support de présentation.
+
+## Voir le prototype
+
+Les pages sont du HTML statique : on peut ouvrir `index.html` dans un navigateur, ou, avec XAMPP, aller à `http://localhost/ADB/la_note_gourmande/`.
+
+- **Mobile-first** : une colonne jusqu'à 599 px, deux colonnes de cartes de 600 à 1023 px, trois colonnes et filtres en barre latérale à partir de 1024 px.
+- **Sans JavaScript**, le panneau de filtres reste affiché dans la page et le formulaire GET fonctionne ; avec JavaScript, il s'ouvre en plein écran sur mobile et tablette.
+- Les cartes de recettes sont des exemples ; les photos sont des emplacements 4:3 à remplacer par de vraies images.
+- Les pages « Le voyage » et « Qui sommes-nous ? » n'existent pas encore, donc ne figurent pas dans le menu.
 
 ## Installation
 
