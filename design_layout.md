@@ -118,6 +118,7 @@ Le contenu du travail de Quentin (branche `mobil_first_home_page`, commit « foo
 
 - **Menu** (en-tête et burger) : Accueil, Recettes, **Qui sommes-nous ?** (lien `#`, page à créer) et **Se connecter** (bouton doré dans l'en-tête à partir de 1024 px, dans le menu burger en dessous).
 - **Pied de page** : logo, liens (Recettes, Qui sommes-nous ?, Nous contacter, Règles de la communauté), copyright, mentions (Mentions légales, Confidentialité, Cookies). Toujours sombre comme l'en-tête. Desktop : deux lignes alignées sur la colonne de 75 rem ; mobile : en colonne. Cibles de 44 px, texte de 14 px minimum.
+- **Points entre les mentions** : générés en CSS (`.pied__legal li + li::before`, « • » avec `content: "•" / ""` pour que les lecteurs d'écran l'ignorent), centrés sur la ligne, marge de .618rem de chaque côté. Mesuré sur 6 pages à 400 et 1000 px : les 3 liens sont sur la même ligne et séparés de 24,8 px des deux côtés. Pas de `<span>` dans la liste (invalide dans un `<ul>`).
 - **Pas repris** : le texte « La Note Gourmande » à côté du logo (le logo le contient déjà), la barre fixe en haut, le menu en case à cocher (remplacé par le `<dialog>`), les couleurs en dur.
 - **Liens `#`** : Qui sommes-nous ?, Se connecter, Nous contacter, Règles de la communauté, Mentions légales, Confidentialité, Cookies : pages à créer.
 - Appliqué aux 11 pages (accueil, catalogue, fiche modèle et 8 fiches). Vérifié à 400 et 1440 px : aucun débordement, aucun texte sous 14 px, aucune cible sous 44 px, console vide.

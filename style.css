@@ -299,7 +299,10 @@ img.photo { width: 100%; height: auto; object-fit: cover; }   /* vraie photo : r
 .pied__logo img { height: var(--s3); width: auto; }
 .pied__liens a { display: inline-flex; align-items: center; min-height: var(--cible); font-size: 1rem; }
 .pied__bas { display: flex; flex-direction: column; gap: var(--s-1); padding-top: var(--s1); }
-.pied__legal { display: flex; flex-wrap: wrap; gap: 0 var(--s1); }
+.pied__legal { display: flex; flex-wrap: wrap; align-items: center; }
+.pied__legal li { display: flex; align-items: center; }
+/* Points entre les mentions, générés en CSS : même code sur toutes les pages, centrés sur la ligne, ignorés par les lecteurs d'écran */
+.pied__legal li + li::before { content: "•"; content: "•" / ""; margin-inline: var(--s-1); }
 .pied__legal a { display: inline-flex; align-items: center; min-height: var(--cible); }
 
 /* ==========================================================================
