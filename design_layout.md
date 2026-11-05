@@ -48,3 +48,15 @@ Ce que le cahier des charges impose et qui l'emporte sur φ : texte 17 px, titre
 - **Photos** : des emplacements `div role="img"` avec une description, tant qu'il n'y a pas de vraies photos (à remplacer par `<img alt="…">`).
 - **Logo** : seule la version pour fond sombre existe ; la version claire reste à faire, d'où l'en-tête sombre dans les deux modes.
 - **Icône des badges** : une même icône pour toutes les catégories pour l'instant (une icône par catégorie à dessiner).
+
+---
+
+# Fiche recette (`recette.html`, 2026-11-05)
+
+Structure et composants repris de Raphaël Bruggeman (branche `page_recette`), adaptés à `style.css` dans `recette.css` (chargé après `style.css`).
+
+- **Réutilisé du site** : variables de couleur (clair et sombre), `.btn`, `.badge`, `.photo` (4:3), `.etoiles`, `.fil-ariane`, en-tête et pied de page communs.
+- **φ mesuré à 1440 px** : photo et titre 683,8 px et 422,6 px (1,618) ; préparation et ingrédients 683,8 px et 422,6 px (1,618). Contrôlé aussi à 1000 et 400 px : aucun débordement, aucun texte sous 14 px, aucune cible sous 44 px, aucun message en console, mode sombre vérifié.
+- **Changements par rapport à la version de Raphaël** : couleurs et tailles passées aux variables et au rem ; boutons `div.fab` devenus de vrais `<button>` (`.rond`) ou `.btn` ; cases d'ingrédients en vraies `<input type="checkbox">` (les icônes `crop_square` et `check_box_outlined` ne servent plus) ; icônes imprimer et cœur gardées, utilisées comme masque CSS (elles sont blanches) ; `<caption>` remplacé par un `<label>` ; doublon auteur et date supprimé ; « Portion 4 min » devenu « Portions 4 pers. » ; image et avatar manquants remplacés par un bloc 4:3 et une initiale ; tags devenus des liens vers `catalogue.html?tag[]=...` ; `lang="fr"`.
+- **Desktop (1024 px)** : photo et titre 1,618 : 1 ; ingrédients et préparation 1 : 1,618 ; six chiffres clés sur une ligne ; commentaires en colonne de lecture de 48 rem.
+- **Reste à faire** : vraie photo (`<img>`), contenu réel, JavaScript des portions, de la note, des favoris et du tri, lien depuis les cartes du catalogue.
