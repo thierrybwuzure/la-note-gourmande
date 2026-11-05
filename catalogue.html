@@ -67,8 +67,8 @@
 
     <div data-masquable>
       <h1>Toutes les recettes</h1>
-      <!-- PHP : count($recettes). Ici, 48 est un exemple et trois cartes sont montrées. -->
-      <p class="compteur"><span id="nb-resultats">48</span> recettes</p>
+      <!-- PHP : count($recettes). Ici, 10 est un exemple : huit recettes (une par catégorie) et deux cartes sans page. -->
+      <p class="compteur"><span id="nb-resultats">10</span> recettes</p>
     </div>
 
     <!-- Un seul formulaire GET : recherche, tri et filtres.
@@ -85,7 +85,7 @@
       <div class="outils" data-masquable>
         <!-- Visible seulement avec JavaScript, sous 1024 px ; le nombre est calculé par le script -->
         <button type="button" class="btn btn--or btn-filtres" aria-controls="filtres" aria-expanded="false">
-          Filtres <span>(2)</span>
+          Filtres <span></span>
         </button>
         <label class="tri">
           <span class="sr-only">Trier par</span>
@@ -98,13 +98,9 @@
         <noscript><button type="submit" class="btn btn--contour">Trier</button></noscript>
       </div>
 
-      <!-- Filtres actifs : chaque lien est l'adresse de la page sans ce filtre (PHP la construira) -->
-      <ul class="filtres-actifs" aria-label="Filtres actifs" data-masquable>
-        <li><a href="catalogue.html?temps=30">Street food <span aria-hidden="true">✕</span><span class="sr-only">
-              (retirer ce filtre)</span></a></li>
-        <li><a href="catalogue.html?categorie[]=street-food">Moins de 30 min <span aria-hidden="true">✕</span><span
-              class="sr-only"> (retirer ce filtre)</span></a></li>
-      </ul>
+      <!-- Filtres actifs : chaque lien est l'adresse de la page sans ce filtre (PHP la construira).
+         Aucun filtre ici, donc la liste n'est pas affichée :
+         <ul class="filtres-actifs" aria-label="Filtres actifs" data-masquable> <li><a href="catalogue.html?temps=30">Moins de 30 min ✕</a></li> </ul> -->
 
       <div class="disposition">
 
@@ -125,7 +121,7 @@
             <label><input type="checkbox" name="categorie[]" value="desserts-patisserie"> Desserts &amp;
               pâtisserie</label>
             <label><input type="checkbox" name="categorie[]" value="en-cas"> En-cas</label>
-            <label><input type="checkbox" name="categorie[]" value="street-food" checked> Street food</label>
+            <label><input type="checkbox" name="categorie[]" value="street-food"> Street food</label>
             <label><input type="checkbox" name="categorie[]" value="entrees"> Entrées</label>
           </fieldset>
 
@@ -141,8 +137,8 @@
           <fieldset>
             <legend>Temps total</legend>
             <!-- Un seul choix possible : des boutons radio -->
-            <label><input type="radio" name="temps" value=""> Peu importe</label>
-            <label><input type="radio" name="temps" value="30" checked> Moins de 30 min</label>
+            <label><input type="radio" name="temps" value="" checked> Peu importe</label>
+            <label><input type="radio" name="temps" value="30"> Moins de 30 min</label>
             <label><input type="radio" name="temps" value="60"> 30 à 60 min</label>
             <label><input type="radio" name="temps" value="plus"> Plus d'une heure</label>
           </fieldset>
@@ -184,9 +180,57 @@
             <!-- PHP : foreach ($recettes as $r).
                Photos : remplacer chaque <div class="photo"> par
                <img src="..." alt="Description du plat" width="400" height="300" loading="lazy"> (4:3, WebP). -->
+                        <li>
+              <article class="carte">
+                <div class="photo" role="img" aria-label="Photo : Tarte tatin"></div>
+                <div>
+                  <span class="badge" data-cat="desserts-patisserie">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round" aria-hidden="true">
+                      <path d="M3 12h18a9 9 0 0 1-18 0z" />
+                      <path d="M8 8c0-2 2-2 2-4M14 8c0-2 2-2 2-4" />
+                    </svg>
+                    Desserts &amp; pâtisserie
+                  </span>
+                  <h3 class="carte__titre"><a href="recette-tarte-tatin.html">Tarte tatin</a></h3>
+                  <p class="carte__meta">
+                    <span class="carte__note">
+                      <span class="etoiles" aria-hidden="true">★★★★★</span>
+                      <strong aria-hidden="true">4,8</strong> (21)
+                      <span class="sr-only">Note moyenne : 4,8 sur 5, 21 notes</span>
+                    </span>
+                    65 min · Française
+                  </p>
+                </div>
+              </article>
+            </li>
             <li>
               <article class="carte">
-                <div class="photo" role="img" aria-label="Photo des tacos al pastor"></div>
+                <div class="photo" role="img" aria-label="Photo : Rouleaux de printemps crevettes-menthe"></div>
+                <div>
+                  <span class="badge" data-cat="entrees">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round" aria-hidden="true">
+                      <path d="M3 12h18a9 9 0 0 1-18 0z" />
+                      <path d="M8 8c0-2 2-2 2-4M14 8c0-2 2-2 2-4" />
+                    </svg>
+                    Entrées
+                  </span>
+                  <h3 class="carte__titre"><a href="recette-rouleaux-de-printemps.html">Rouleaux de printemps crevettes-menthe</a></h3>
+                  <p class="carte__meta">
+                    <span class="carte__note">
+                      <span class="etoiles" aria-hidden="true">★★★★☆</span>
+                      <strong aria-hidden="true">4,1</strong> (6)
+                      <span class="sr-only">Note moyenne : 4,1 sur 5, 6 notes</span>
+                    </span>
+                    35 min · Vietnamienne
+                  </p>
+                </div>
+              </article>
+            </li>
+            <li>
+              <article class="carte">
+                <div class="photo" role="img" aria-label="Photo : Tacos al pastor"></div>
                 <div>
                   <span class="badge" data-cat="street-food">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -196,7 +240,7 @@
                     </svg>
                     Street food
                   </span>
-                  <h3 class="carte__titre"><a href="#">Tacos al pastor</a></h3>
+                  <h3 class="carte__titre"><a href="recette-tacos-al-pastor.html">Tacos al pastor</a></h3>
                   <p class="carte__meta">
                     <span class="carte__note">
                       <span class="etoiles" aria-hidden="true">★★★★☆</span>
@@ -204,6 +248,126 @@
                       <span class="sr-only">Note moyenne : 4,3 sur 5, 12 notes</span>
                     </span>
                     45 min · Mexicaine
+                  </p>
+                </div>
+              </article>
+            </li>
+            <li>
+              <article class="carte">
+                <div class="photo" role="img" aria-label="Photo : Houmous maison et pita grillé"></div>
+                <div>
+                  <span class="badge" data-cat="en-cas">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round" aria-hidden="true">
+                      <path d="M3 12h18a9 9 0 0 1-18 0z" />
+                      <path d="M8 8c0-2 2-2 2-4M14 8c0-2 2-2 2-4" />
+                    </svg>
+                    En-cas
+                  </span>
+                  <h3 class="carte__titre"><a href="recette-houmous-pita.html">Houmous maison et pita grillé</a></h3>
+                  <p class="carte__meta">
+                    <span class="carte__note">
+                      <span class="etoiles" aria-hidden="true">★★★★☆</span>
+                      <strong aria-hidden="true">4,4</strong> (11)
+                      <span class="sr-only">Note moyenne : 4,4 sur 5, 11 notes</span>
+                    </span>
+                    15 min · Libanaise
+                  </p>
+                </div>
+              </article>
+            </li>
+            <li>
+              <article class="carte">
+                <div class="photo" role="img" aria-label="Photo : Bowl de riz, tofu mariné et légumes croquants"></div>
+                <div>
+                  <span class="badge" data-cat="healthy">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round" aria-hidden="true">
+                      <path d="M3 12h18a9 9 0 0 1-18 0z" />
+                      <path d="M8 8c0-2 2-2 2-4M14 8c0-2 2-2 2-4" />
+                    </svg>
+                    Healthy
+                  </span>
+                  <h3 class="carte__titre"><a href="recette-bowl-riz-tofu.html">Bowl de riz, tofu mariné et légumes croquants</a></h3>
+                  <p class="carte__meta">
+                    <span class="carte__note">
+                      <span class="etoiles" aria-hidden="true">★★★★☆</span>
+                      <strong aria-hidden="true">4,2</strong> (7)
+                      <span class="sr-only">Note moyenne : 4,2 sur 5, 7 notes</span>
+                    </span>
+                    40 min · Japonaise
+                  </p>
+                </div>
+              </article>
+            </li>
+            <li>
+              <article class="carte">
+                <div class="photo" role="img" aria-label="Photo : Poulet yassa"></div>
+                <div>
+                  <span class="badge" data-cat="cuisine-maison">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round" aria-hidden="true">
+                      <path d="M3 12h18a9 9 0 0 1-18 0z" />
+                      <path d="M8 8c0-2 2-2 2-4M14 8c0-2 2-2 2-4" />
+                    </svg>
+                    Cuisine maison
+                  </span>
+                  <h3 class="carte__titre"><a href="recette-poulet-yassa.html">Poulet yassa</a></h3>
+                  <p class="carte__meta">
+                    <span class="carte__note">
+                      <span class="etoiles" aria-hidden="true">★★★★★</span>
+                      <strong aria-hidden="true">4,6</strong> (14)
+                      <span class="sr-only">Note moyenne : 4,6 sur 5, 14 notes</span>
+                    </span>
+                    70 min · Sénégalaise
+                  </p>
+                </div>
+              </article>
+            </li>
+            <li>
+              <article class="carte">
+                <div class="photo" role="img" aria-label="Photo : Magret de canard sauce aux cerises"></div>
+                <div>
+                  <span class="badge" data-cat="gastronomique">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round" aria-hidden="true">
+                      <path d="M3 12h18a9 9 0 0 1-18 0z" />
+                      <path d="M8 8c0-2 2-2 2-4M14 8c0-2 2-2 2-4" />
+                    </svg>
+                    Gastronomique
+                  </span>
+                  <h3 class="carte__titre"><a href="recette-magret-canard-cerises.html">Magret de canard sauce aux cerises</a></h3>
+                  <p class="carte__meta">
+                    <span class="carte__note">
+                      <span class="etoiles" aria-hidden="true">★★★★★</span>
+                      <strong aria-hidden="true">4,7</strong> (9)
+                      <span class="sr-only">Note moyenne : 4,7 sur 5, 9 notes</span>
+                    </span>
+                    45 min · Française
+                  </p>
+                </div>
+              </article>
+            </li>
+            <li>
+              <article class="carte">
+                <div class="photo" role="img" aria-label="Photo : Cheeseburger maison"></div>
+                <div>
+                  <span class="badge" data-cat="fast-food">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round" aria-hidden="true">
+                      <path d="M3 12h18a9 9 0 0 1-18 0z" />
+                      <path d="M8 8c0-2 2-2 2-4M14 8c0-2 2-2 2-4" />
+                    </svg>
+                    Fast-food
+                  </span>
+                  <h3 class="carte__titre"><a href="recette-cheeseburger-maison.html">Cheeseburger maison</a></h3>
+                  <p class="carte__meta">
+                    <span class="carte__note">
+                      <span class="etoiles" aria-hidden="true">★★★★★</span>
+                      <strong aria-hidden="true">4,5</strong> (18)
+                      <span class="sr-only">Note moyenne : 4,5 sur 5, 18 notes</span>
+                    </span>
+                    30 min · Américaine
                   </p>
                 </div>
               </article>
