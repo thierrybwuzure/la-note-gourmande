@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Toutes les recettes — La Note Gourmande</title>
+  <meta name="description"
+    content="Recettes des cuisines du monde, filtrables par catégorie, origine, temps et difficulté.">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/image/la-note-gourmande-favicon/favicon-32.png">
+  <link rel="apple-touch-icon" href="assets/image/la-note-gourmande-favicon/apple-touch-icon.png">
+  <link rel="stylesheet" href="style.css">
+  <script src="js/site.js"></script>
+</head>
+
+<body>
+
+  <a class="lien-evitement" href="#contenu">Aller au contenu</a>
+
+  <!-- En-tête commun (plus tard header.php) : logo, navigation, loupe, burger + menu mobile -->
+  <header class="entete" data-masquable>
+    <a href="index.html" class="entete__logo"><img src="assets/image/logo/la-note-gourmande-noir-or_v1.png"
+        alt="La Note Gourmande, accueil" height="48"></a>
+    <nav class="entete__nav" aria-label="Menu principal">
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="catalogue.html" aria-current="page">Recettes</a></li>
+        <!-- À ajouter quand les pages existent : Le voyage, Qui sommes-nous ? -->
+      </ul>
+    </nav>
+    <button type="button" class="entete__loupe" aria-label="Rechercher" aria-controls="q">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" aria-hidden="true">
+        <circle cx="11" cy="11" r="7" />
+        <path d="M20 20l-3.5-3.5" />
+      </svg>
+    </button>
+    <button type="button" class="burger" aria-label="Ouvrir le menu" aria-haspopup="dialog"
+      aria-controls="menu">☰</button>
+  </header>
+
+  <dialog id="menu" class="menu" aria-label="Menu principal">
+    <div class="menu__entete">
+      <strong>Menu</strong>
+      <button type="button" class="menu__fermer" aria-label="Fermer le menu">✕</button>
+    </div>
+    <ul>
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="catalogue.html" aria-current="page">Recettes</a></li>
+    </ul>
+  </dialog>
+
+  <main id="contenu" class="conteneur">
+
+    <nav class="fil-ariane" aria-label="Fil d'Ariane" data-masquable>
+      <ol>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="catalogue.html" aria-current="page">Recettes</a></li>
+      </ol>
+    </nav>
+
+    <div data-masquable>
+      <h1>Toutes les recettes</h1>
+      <!-- PHP : count($recettes). Ici, 48 est un exemple et trois cartes sont montrées. -->
+      <p class="compteur"><span id="nb-resultats">48</span> recettes</p>
+    </div>
+
+    <!-- Un seul formulaire GET : recherche, tri et filtres.
+       Il fonctionne sans JavaScript et les filtres se retrouvent dans l'URL
+       (catalogue.html?q=tacos&categorie[]=street-food&tri=notes) : PHP les lit avec $_GET. -->
+    <form action="catalogue.html" method="get" id="form-catalogue">
+
+      <div role="search" class="recherche" data-masquable>
+        <label for="q" class="sr-only">Rechercher une recette</label>
+        <input type="search" id="q" name="q" placeholder="Recette, ingrédient…" value="">
+        <button type="submit" class="btn btn--or">Chercher</button>
+      </div>
+
+      <div class="outils" data-masquable>
+        <!-- Visible seulement avec JavaScript, sous 1024 px ; le nombre est calculé par le script -->
+        <button type="button" class="btn btn--or btn-filtres" aria-controls="filtres" aria-expanded="false">
+          Filtres <span>(2)</span>
+        </button>
+        <label class="tri">
+          <span class="sr-only">Trier par</span>
+          <select name="tri">
+            <option value="recentes" selected>Plus récentes</option>
+            <option value="notes">Mieux notées</option>
+            <option value="rapides">Plus rapides</option>
+          </select>
+        </label>
+        <noscript><button type="submit" class="btn btn--contour">Trier</button></noscript>
+      </div>
+
+      <!-- Filtres actifs : chaque lien est l'adresse de la page sans ce filtre (PHP la construira) -->
+      <ul class="filtres-actifs" aria-label="Filtres actifs" data-masquable>
+        <li><a href="catalogue.html?temps=30">Street food <span aria-hidden="true">✕</span><span class="sr-only">
+              (retirer ce filtre)</span></a></li>
+        <li><a href="catalogue.html?categorie[]=street-food">Moins de 30 min <span aria-hidden="true">✕</span><span
+              class="sr-only"> (retirer ce filtre)</span></a></li>
+      </ul>
+
+      <div class="disposition">
+
+        <!-- Panneau de filtres : plein écran sur mobile et tablette, colonne sur desktop -->
+        <aside class="filtres" id="filtres" aria-labelledby="titre-filtres">
+          <div class="filtres__entete">
+            <h2 id="titre-filtres">Filtres</h2>
+            <button type="button" class="filtres__fermer" aria-label="Fermer les filtres">✕</button>
+          </div>
+
+          <fieldset>
+            <legend>Catégorie</legend>
+            <!-- PHP : foreach ($categories as $c) -->
+            <label><input type="checkbox" name="categorie[]" value="fast-food"> Fast-food</label>
+            <label><input type="checkbox" name="categorie[]" value="gastronomique"> Gastronomique</label>
+            <label><input type="checkbox" name="categorie[]" value="cuisine-maison"> Cuisine maison</label>
+            <label><input type="checkbox" name="categorie[]" value="healthy"> Healthy</label>
+            <label><input type="checkbox" name="categorie[]" value="desserts-patisserie"> Desserts &amp;
+              pâtisserie</label>
+            <label><input type="checkbox" name="categorie[]" value="en-cas"> En-cas</label>
+            <label><input type="checkbox" name="categorie[]" value="street-food" checked> Street food</label>
+            <label><input type="checkbox" name="categorie[]" value="entrees"> Entrées</label>
+          </fieldset>
+
+          <fieldset>
+            <legend>Origine</legend>
+            <label><input type="checkbox" name="region[]" value="asie"> Asie</label>
+            <label><input type="checkbox" name="region[]" value="afrique"> Afrique</label>
+            <label><input type="checkbox" name="region[]" value="ameriques"> Amériques</label>
+            <label><input type="checkbox" name="region[]" value="europe"> Europe</label>
+            <label><input type="checkbox" name="region[]" value="moyen-orient"> Moyen-Orient</label>
+          </fieldset>
+
+          <fieldset>
+            <legend>Temps total</legend>
+            <!-- Un seul choix possible : des boutons radio -->
+            <label><input type="radio" name="temps" value=""> Peu importe</label>
+            <label><input type="radio" name="temps" value="30" checked> Moins de 30 min</label>
+            <label><input type="radio" name="temps" value="60"> 30 à 60 min</label>
+            <label><input type="radio" name="temps" value="plus"> Plus d'une heure</label>
+          </fieldset>
+
+          <fieldset>
+            <legend>Difficulté</legend>
+            <label><input type="checkbox" name="difficulte[]" value="facile"> Facile</label>
+            <label><input type="checkbox" name="difficulte[]" value="moyen"> Moyen</label>
+            <label><input type="checkbox" name="difficulte[]" value="difficile"> Difficile</label>
+          </fieldset>
+
+          <fieldset>
+            <legend>Régime</legend>
+            <!-- Tags de type « régime » en base de données -->
+            <label><input type="checkbox" name="tag[]" value="vegetarien"> Végétarien</label>
+            <label><input type="checkbox" name="tag[]" value="vegan"> Vegan</label>
+            <label><input type="checkbox" name="tag[]" value="sans-gluten"> Sans gluten</label>
+            <label><input type="checkbox" name="tag[]" value="sans-lactose"> Sans lactose</label>
+          </fieldset>
+
+          <fieldset>
+            <legend>Tags populaires</legend>
+            <label><input type="checkbox" name="tag[]" value="ete"> Été</label>
+            <label><input type="checkbox" name="tag[]" value="apero"> Apéro</label>
+            <label><input type="checkbox" name="tag[]" value="sans-four"> Sans four</label>
+          </fieldset>
+
+          <div class="filtres__actions">
+            <a href="catalogue.html" class="btn btn--contour">Réinitialiser</a>
+            <button type="submit" class="btn btn--or">Voir les recettes</button>
+          </div>
+        </aside>
+
+        <!-- Résultats -->
+        <section aria-labelledby="titre-resultats" data-masquable>
+          <h2 id="titre-resultats" class="sr-only">Résultats</h2>
+
+          <ul class="grille">
+            <!-- PHP : foreach ($recettes as $r).
+               Photos : remplacer chaque <div class="photo"> par
+               <img src="..." alt="Description du plat" width="400" height="300" loading="lazy"> (4:3, WebP). -->
+            <li>
+              <article class="carte">
+                <div class="photo" role="img" aria-label="Photo des tacos al pastor"></div>
+                <div>
+                  <span class="badge" data-cat="street-food">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round" aria-hidden="true">
+                      <path d="M3 12h18a9 9 0 0 1-18 0z" />
+                      <path d="M8 8c0-2 2-2 2-4M14 8c0-2 2-2 2-4" />
+                    </svg>
+                    Street food
+                  </span>
+                  <h3 class="carte__titre"><a href="#">Tacos al pastor</a></h3>
+                  <p class="carte__meta">
+                    <span class="carte__note">
+                      <span class="etoiles" aria-hidden="true">★★★★☆</span>
+                      <strong aria-hidden="true">4,3</strong> (12)
+                      <span class="sr-only">Note moyenne : 4,3 sur 5, 12 notes</span>
+                    </span>
+                    45 min · Mexicaine
+                  </p>
+                </div>
+              </article>
+            </li>
+            <li>
+              <article class="carte">
+                <div class="photo" role="img" aria-label="Photo du banh mi au porc caramélisé"></div>
+                <div>
+                  <span class="badge" data-cat="street-food">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round" aria-hidden="true">
+                      <path d="M3 12h18a9 9 0 0 1-18 0z" />
+                      <path d="M8 8c0-2 2-2 2-4M14 8c0-2 2-2 2-4" />
+                    </svg>
+                    Street food
+                  </span>
+                  <h3 class="carte__titre"><a href="#">Banh mi au porc caramélisé</a></h3>
+                  <p class="carte__meta">
+                    <span class="carte__note">
+                      <span class="etoiles" aria-hidden="true">★★★☆☆</span>
+                      <strong aria-hidden="true">3,4</strong> (3)
+                      <span class="sr-only">Note moyenne : 3,4 sur 5, 3 notes</span>
+                    </span>
+                    40 min · Vietnamienne
+                  </p>
+                </div>
+              </article>
+            </li>
+            <li>
+              <!-- Moins de 3 notes : pas de moyenne trompeuse (cahier des charges, section 4) -->
+              <article class="carte">
+                <div class="photo" role="img" aria-label="Photo des falafels"></div>
+                <div>
+                  <span class="badge" data-cat="street-food">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round" aria-hidden="true">
+                      <path d="M3 12h18a9 9 0 0 1-18 0z" />
+                      <path d="M8 8c0-2 2-2 2-4M14 8c0-2 2-2 2-4" />
+                    </svg>
+                    Street food
+                  </span>
+                  <h3 class="carte__titre"><a href="#">Falafels maison</a></h3>
+                  <p class="carte__meta">
+                    <span class="carte__note">Pas encore assez de notes</span>
+                    25 min · Libanaise
+                  </p>
+                </div>
+              </article>
+            </li>
+          </ul>
+
+          <!-- PHP : garder les filtres actifs dans chaque lien (http_build_query) -->
+          <nav class="pagination" aria-label="Pagination">
+            <ol>
+              <li><a href="?page=1" aria-current="page">1</a></li>
+              <li><a href="?page=2">2</a></li>
+              <li><a href="?page=3">3</a></li>
+              <li><a href="?page=2" aria-label="Page suivante">→</a></li>
+            </ol>
+          </nav>
+        </section>
+
+      </div>
+    </form>
+  </main>
+
+  <!-- Pied de page commun (plus tard footer.php) -->
+  <footer class="pied" data-masquable>
+    <p>© 2026 La Note Gourmande · Recettes du monde</p>
+  </footer>
+
+</body>
+
+</html>

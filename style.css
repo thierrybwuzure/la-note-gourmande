@@ -1,0 +1,278 @@
+/* ==========================================================================
+   La Note Gourmande : feuille de style commune
+   Mobile-first : la base vaut pour 0 à 599 px, puis 600 px et 1024 px.
+   Couleurs, typographie et tailles : cahier des charges, sections 7 et 9.
+   Espacements : échelle en puissances de φ (1,618), base 1 rem.
+   ========================================================================== */
+
+/* Polices auto-hébergées (RGPD, performance), sous-ensemble latin */
+@font-face {
+  font-family: 'Bricolage Grotesque';
+  src: url('assets/fonts/bricolage-grotesque-latin.woff2') format('woff2');
+  font-weight: 600 800;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'DM Sans';
+  src: url('assets/fonts/dm-sans-latin.woff2') format('woff2');
+  font-weight: 400 700;
+  font-display: swap;
+}
+
+/* ---------- Variables ---------- */
+:root {
+  /* échelle φ */
+  --s-3: .236rem; --s-2: .382rem; --s-1: .618rem;
+  --s0: 1rem;
+  --s1: 1.618rem; --s2: 2.618rem; --s3: 4.236rem; --s4: 6.854rem;
+
+  /* mode clair */
+  --fond: #FBF8F1;          /* ivoire */
+  --surface: #F2ECDF;       /* parchemin */
+  --bordure: #E0D8C6;       /* sable, décoratif */
+  --champ: #8C8478;         /* contour des champs et boutons (3:1 minimum) */
+  --texte: #151412;
+  --texte-2: #5E5A53;
+  --or: #D8B23C;            /* boutons, éléments actifs, jamais en texte */
+  --texte-sur-or: #151412;
+  --or-survol: #F4D46A;
+  --lien: #8A6D12;          /* or foncé : liens et contour de focus */
+  --lien-survol: #151412;
+  --etoile: #8A6D12;        /* étoiles de note : or foncé en clair (l'or pur fait 1,9:1) */
+  --focus: #8A6D12;
+  --noir: #151412;
+  --blanc-casse: #F5F2EA;
+  --texte-badge: #FFFFFF;
+
+  --cat-fast-food: #4A5560;
+  --cat-gastronomique: #5B2A4E;
+  --cat-cuisine-maison: #7A5A12;
+  --cat-healthy: #2F6B4F;
+  --cat-desserts-patisserie: #A8325A;
+  --cat-en-cas: #9C4A1E;
+  --cat-street-food: #2E4A7D;
+  --cat-entrees: #1A5F6B;
+
+  --rayon: 8px;             /* boutons : 8 px (cahier des charges) */
+  --cible: 2.75rem;         /* zone cliquable minimale : 44 px */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --fond: #151412;
+    --surface: #211F1B;
+    --bordure: #3A3630;
+    --texte: #F5F2EA;
+    --texte-2: #A8A39A;
+    --lien: #D8B23C;
+    --lien-survol: #F4D46A;
+    --etoile: #D8B23C;
+    --focus: #D8B23C;
+    --texte-badge: #151412;
+
+    --cat-fast-food: #AEB8C2;
+    --cat-gastronomique: #D49BC4;
+    --cat-cuisine-maison: #D9B45E;
+    --cat-healthy: #7CC4A0;
+    --cat-desserts-patisserie: #EE8FAE;
+    --cat-en-cas: #E8A27A;
+    --cat-street-food: #94B3E8;
+    --cat-entrees: #86CBD6;
+  }
+}
+
+/* ---------- Base ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--fond);
+  color: var(--texte);
+  font: 400 1.0625rem/1.6 'DM Sans', system-ui, sans-serif;   /* 17 px, interligne 1,6 */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;                                     /* le pied de page reste en bas */
+}
+main { flex: 1; }
+img { max-width: 100%; display: block; }
+a { color: var(--lien); text-decoration: underline; text-underline-offset: .15em; }
+a:hover { color: var(--lien-survol); }
+:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+
+h1, h2, h3 { font-family: 'Bricolage Grotesque', 'DM Sans', system-ui, sans-serif; letter-spacing: -.01em; line-height: 1.272; margin: 0; }
+h1 { font-weight: 800; font-size: 1.875rem; }    /* 30 px mobile */
+h2 { font-weight: 700; font-size: 1.625rem; }    /* 26 px */
+h3 { font-weight: 700; font-size: 1.0625rem; }   /* 17 px */
+
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.lien-evitement { position: absolute; left: var(--s0); top: var(--s0); z-index: 30; padding: var(--s-1) var(--s0);
+                  border-radius: var(--rayon); background: var(--or); color: var(--texte-sur-or); font-weight: 700; }
+.lien-evitement:not(:focus) { left: -9999px; }
+
+/* ---------- Boutons ---------- */
+.btn { display: inline-flex; align-items: center; justify-content: center; min-height: var(--cible);
+       padding: var(--s-1) var(--s0); border: 2px solid transparent; border-radius: var(--rayon);
+       font-family: inherit; font-size: 1rem; font-weight: 700; line-height: 1.2; text-decoration: none; cursor: pointer; }
+.btn--or { background: var(--or); color: var(--texte-sur-or); }
+.btn--or:hover { background: var(--or-survol); color: var(--texte-sur-or); }
+.btn--contour { background: transparent; border-color: currentColor; color: var(--texte); }
+.btn--contour:hover { background: var(--surface); color: var(--texte); }
+
+/* ---------- En-tête (toujours sombre : les logos sont faits pour fond noir) ---------- */
+.entete { display: flex; align-items: center; gap: var(--s-1); padding: var(--s-1) var(--s0);
+          background: var(--noir); color: var(--blanc-casse); }
+.entete a { color: var(--blanc-casse); text-decoration: none; }
+.entete a:hover { color: var(--or-survol); }
+.entete :focus-visible { outline-color: var(--or); }
+.entete__logo { margin-right: auto; display: block; }
+.entete__logo img { height: 3rem; width: auto; }
+.entete__nav { display: none; }
+.entete__nav ul { list-style: none; margin: 0; padding: 0; display: flex; gap: var(--s1); }
+.entete__nav a { display: inline-flex; align-items: center; min-height: var(--cible); font-weight: 500; }
+.entete__nav [aria-current="page"] { color: var(--or); font-weight: 700; }
+.entete__loupe, .burger { display: grid; place-items: center; width: var(--cible); height: var(--cible);
+                          border: 0; border-radius: var(--rayon); background: transparent; color: inherit;
+                          font: inherit; font-size: 1.5rem; cursor: pointer; }
+.entete__loupe:hover, .burger:hover { color: var(--or-survol); }
+
+/* Menu mobile (élément <dialog>) */
+.menu { width: min(100% - 2 * var(--s0), 24rem); margin: var(--s0) var(--s0) auto auto; padding: var(--s1);
+        border: 1px solid var(--bordure); border-radius: var(--rayon); background: var(--fond); color: var(--texte); }
+.menu::backdrop { background: rgb(21 20 18 / .6); }
+.menu__entete { display: flex; align-items: center; justify-content: space-between; margin-bottom: var(--s0); }
+.menu__fermer { display: grid; place-items: center; width: var(--cible); height: var(--cible); border: 0;
+                background: transparent; color: inherit; font-size: 1.25rem; cursor: pointer; }
+.menu ul { list-style: none; margin: 0; padding: 0; }
+.menu a { display: flex; align-items: center; min-height: var(--cible); color: var(--texte); font-weight: 500; }
+.menu [aria-current="page"] { font-weight: 700; color: var(--lien); }
+
+/* ---------- Mise en page ---------- */
+.conteneur { display: flex; flex-direction: column; gap: var(--s1); padding: var(--s1) var(--s0) var(--s2); }
+
+.fil-ariane ol { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: var(--s-2);
+                 font-size: .875rem; color: var(--texte-2); }
+.fil-ariane li + li::before { content: "/"; margin-right: var(--s-2); }
+.fil-ariane li { display: flex; align-items: center; }
+.fil-ariane a { display: inline-flex; align-items: center; min-height: var(--cible); }
+.compteur { margin: var(--s-2) 0 0; color: var(--texte-2); }
+
+/* ---------- Recherche, tri, filtres actifs ---------- */
+.recherche { display: flex; gap: var(--s-1); }
+.recherche input { flex: 1; min-height: 3rem; padding: 0 var(--s0); border: 1px solid var(--champ);
+                   border-radius: var(--rayon); font: inherit; background: var(--surface); color: var(--texte); }
+.recherche .btn { display: none; }                /* sur mobile, Entrée suffit */
+
+.outils { display: flex; gap: var(--s-1); margin-top: var(--s-1); }
+.outils > * { flex: 1; }
+.btn-filtres { display: none; }                   /* inutile sans JavaScript : le panneau est alors affiché */
+.js .btn-filtres { display: inline-flex; }
+.btn-filtres span { margin-left: var(--s-2); }
+.disposition { margin-top: var(--s0); }
+.tri select { width: 100%; min-height: var(--cible); padding: 0 var(--s0); border: 1px solid var(--champ);
+              border-radius: var(--rayon); font: inherit; background: var(--surface); color: var(--texte); }
+
+.filtres-actifs { list-style: none; margin: var(--s-1) 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: var(--s-1); }
+.filtres-actifs a { display: inline-flex; align-items: center; gap: var(--s-2); min-height: var(--cible);
+                    padding: 0 var(--s0); border: 1px solid var(--texte); border-radius: var(--rayon);
+                    color: var(--texte); font-size: .875rem; text-decoration: none; }
+.filtres-actifs a:hover { background: var(--surface); color: var(--texte); }
+
+/* ---------- Panneau de filtres ---------- */
+.filtres { margin-top: var(--s0); padding: var(--s0); border-radius: var(--rayon); background: var(--surface); }
+.filtres__entete { display: flex; align-items: center; justify-content: space-between; }
+.filtres__fermer { display: none; place-items: center; width: var(--cible); height: var(--cible); border: 0;
+                   background: transparent; color: inherit; font-size: 1.25rem; cursor: pointer; }
+.filtres fieldset { border: 0; border-top: 1px solid var(--bordure); margin: 0; padding: var(--s0) 0; }
+.filtres legend { float: left; width: 100%; font-weight: 700; padding: 0 0 var(--s-1); }   /* float : le titre ne chevauche plus le filet */
+.filtres legend + * { clear: both; }
+.filtres label { display: flex; align-items: center; gap: var(--s-1); min-height: var(--cible); }
+.filtres input { width: 1.25rem; height: 1.25rem; flex: none; accent-color: var(--lien); }
+.filtres__actions { display: flex; flex-wrap: wrap; gap: var(--s-1); padding-top: var(--s0); }
+.filtres__actions .btn { flex: 1 1 auto; }
+
+/* Avec JavaScript, sur mobile et tablette : panneau plein écran, fermé par défaut */
+.js .filtres { position: fixed; inset: 0; z-index: 10; margin: 0; overflow-y: auto; border-radius: 0;
+               background: var(--fond); display: none; }
+.js .filtres.est-ouvert { display: block; }
+.js .filtres__fermer { display: grid; }
+.js .filtres__actions { position: sticky; bottom: 0; background: var(--fond); padding: var(--s0) 0; }
+
+/* ---------- Résultats : liste compacte (vignette + texte) ---------- */
+.grille { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: var(--s0); }
+.carte { position: relative; display: grid; grid-template-columns: 7rem 1fr; gap: var(--s0); align-items: center; }
+.photo { aspect-ratio: 4 / 3; border-radius: var(--s-1); background: linear-gradient(135deg, var(--surface), var(--bordure)); }
+.carte__titre { margin: var(--s-2) 0; }
+.carte__titre a { color: inherit; text-decoration: none; }
+.carte__titre a::after { content: ""; position: absolute; inset: 0; }   /* toute la carte est cliquable */
+.carte:hover .carte__titre a { text-decoration: underline; }
+.carte__meta { margin: 0; font-size: .875rem; color: var(--texte-2); }
+.carte__note { display: block; }
+.etoiles { color: var(--etoile); letter-spacing: .05em; }
+.badge { display: inline-flex; align-items: center; gap: var(--s-2); padding: 0 var(--s-1); border-radius: var(--s-1);
+         font-size: .875rem; font-weight: 700; line-height: 1.5; background: var(--cat, var(--texte-2)); color: var(--texte-badge); }
+.badge svg { width: 1em; height: 1em; flex: none; }
+.badge[data-cat="fast-food"] { --cat: var(--cat-fast-food); }
+.badge[data-cat="gastronomique"] { --cat: var(--cat-gastronomique); }
+.badge[data-cat="cuisine-maison"] { --cat: var(--cat-cuisine-maison); }
+.badge[data-cat="healthy"] { --cat: var(--cat-healthy); }
+.badge[data-cat="desserts-patisserie"] { --cat: var(--cat-desserts-patisserie); }
+.badge[data-cat="en-cas"] { --cat: var(--cat-en-cas); }
+.badge[data-cat="street-food"] { --cat: var(--cat-street-food); }
+.badge[data-cat="entrees"] { --cat: var(--cat-entrees); }
+
+.pagination { margin-top: var(--s1); }
+.pagination ol { list-style: none; margin: 0; padding: 0; display: flex; justify-content: center; gap: var(--s-1); }
+.pagination a { display: grid; place-items: center; min-width: var(--cible); height: var(--cible); border-radius: var(--rayon);
+                color: var(--texte); text-decoration: none; }
+.pagination a:hover { background: var(--surface); }
+.pagination [aria-current="page"] { background: var(--or); color: var(--texte-sur-or); font-weight: 700; }
+
+/* ---------- Accueil ---------- */
+.accroche { display: flex; flex-direction: column; align-items: flex-start; gap: var(--s0); padding: var(--s2) 0; }
+.accroche p { margin: 0; max-width: 36rem; font-size: 1.272rem; }
+.atouts { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--s0); }
+.atouts li { padding: var(--s0); border-radius: var(--rayon); background: var(--surface); }
+.atouts p { margin: var(--s-2) 0 0; color: var(--texte-2); }
+
+/* ---------- Pied de page ---------- */
+.pied { padding: var(--s1) var(--s0); background: var(--surface); color: var(--texte-2); font-size: .875rem; }
+.pied p { margin: 0; }
+
+/* ==========================================================================
+   TABLETTE (600 px et plus) : cartes en grille de 2
+   ========================================================================== */
+@media (min-width: 600px) {
+  .conteneur { padding: var(--s2) var(--s1) var(--s3); }
+  .grille { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--s1); }
+  .carte { grid-template-columns: 1fr; align-items: start; gap: var(--s-1); }
+  .carte__titre { font-size: 1.375rem; }          /* H3 : 22 px */
+  h3 { font-size: 1.375rem; }
+  .atouts { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+/* ==========================================================================
+   DESKTOP (1024 px et plus) : filtres en colonne, 3 cartes par ligne
+   ========================================================================== */
+@media (min-width: 1024px) {
+  h1 { font-size: 3.125rem; }                     /* 50 px */
+  h2 { font-size: 2.25rem; }                      /* 36 px */
+  /* en-tête et pied de page alignés sur la colonne de contenu (75 rem) */
+  .entete { padding-inline: max(var(--s1), calc((100% - 75rem) / 2 + var(--s1))); }
+  .pied { padding-inline: max(var(--s1), calc((100% - 75rem) / 2 + var(--s1))); }
+  .entete__nav { display: block; }
+  .entete__loupe { display: none; }               /* le champ de recherche est déjà visible */
+  .burger { display: none; }
+  .conteneur { max-width: 75rem; margin: 0 auto; padding: var(--s2) var(--s1) var(--s3); }
+  .recherche { max-width: 32.5rem; }
+  .recherche .btn { display: inline-flex; }
+  .btn-filtres, .js .btn-filtres { display: none; }   /* le panneau est toujours visible */
+  .outils { max-width: 20rem; }
+  /* colonne des filtres : 1 pour 2,618 (φ²) de résultats */
+  .disposition { display: grid; grid-template-columns: 1fr 2.618fr; gap: var(--s2); align-items: start; margin-top: var(--s0); }
+  .filtres, .js .filtres { margin-top: 0; }
+  .js .filtres { position: static; display: block; padding: var(--s1); border-radius: var(--rayon); background: var(--surface); }
+  .js .filtres__fermer { display: none; }
+  .js .filtres__actions { position: static; background: none; padding: var(--s0) 0 0; }
+  .grille { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .accroche { padding: var(--s3) 0; }
+}
