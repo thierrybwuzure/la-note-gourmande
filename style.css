@@ -1,8 +1,7 @@
 .header {
-    background: #1a1a1a;
+    background: #11100f;
     display: flex;
     align-items: center;
-    gap: 80px;
     padding: 10px;
     position: fixed;
     top: 0;
@@ -12,14 +11,21 @@
     z-index: 1000;
 }
 
+header div {
+    display: flex;
+    align-items: center;
+}
+
+
+
 .logo,
 .logo a {
     display: flex;
     align-items: center;
     text-decoration: none;
-    color: #D4AF37;
+    color: white;
     font-size: 15px;
-    font-weight: bold;
+    padding-right: 25px;
 }
 
 .logo img {
@@ -35,7 +41,8 @@
 
 .burger {
     display: block;
-    color: #D4AF37;
+    padding-left: 10px;
+    color: white;
     font-size: 28px;
     cursor: pointer;
 }
@@ -53,6 +60,13 @@
     max-height: 0;
     overflow: hidden;
     transition: 0.3s;
+    text-decoration: none;
+    color: white;
+}
+
+.nav a {
+    text-decoration: none;
+    color: white;
 }
 
 #menu-toggle:checked~.nav {
@@ -66,4 +80,96 @@
     border-radius: 50%;
     object-fit: cover;
     border: 2px solid #D4AF37;
+}
+
+footer {
+    background: #11100f;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+}
+
+footer img {
+    width: 150px;
+    height: 150px;
+}
+
+
+footer a {
+    color: white;
+    margin: 10px 0 10px 0;
+}
+
+hr {
+    width: 85%;
+    margin: 20px auto;
+    border: none;
+    height: 1px;
+    background-color: #615b53;
+    /* Applique une couleur grise moderne */
+}
+
+.footer_mention a {
+    color: #beb3a3f1;
+    padding-bottom: 2rem;
+}
+
+@media screen and (min-width: 1024px) {
+
+    /* On cache le bouton burger */
+    .burger {
+        display: none;
+    }
+
+    /* On cache la checkbox */
+    #menu-toggle {
+        display: none;
+    }
+
+    .search {
+        padding-right: 10px;
+    }
+
+    .nav {
+        position: static;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        max-height: none;
+        overflow: visible;
+        background: transparent;
+        padding: 0;
+        gap: 30px;
+        width: auto;
+    }
+
+    .div_separator {
+        width: 1200px;
+    }
+
+    hr{
+        display: none;
+    }
+
+    footer{
+        padding-top: 100px;
+    }
+    .footer_div{
+        display: flex;
+        flex-direction: row;
+        gap: 500px;
+    }
+
+    .footer_lien {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+    }
 }
