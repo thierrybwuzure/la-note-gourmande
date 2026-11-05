@@ -26,7 +26,8 @@
   --s0: 1rem;
   --s1: 1.618rem; --s2: 2.618rem; --s3: 4.236rem; --s4: 6.854rem;
 
-  /* thème sombre uniquement (décision de l'équipe, 2026-11-05) */
+  /* thème sombre : valeurs par défaut. Le thème clair est plus bas ; le bouton de l'en-tête
+     pose data-theme sur <html> (js/site.js), sinon on suit le réglage du système. */
   color-scheme: dark;
   --fond: #151412;
   --surface: #211F1B;
@@ -56,6 +57,55 @@
 
   --rayon: 8px;             /* boutons : 8 px (cahier des charges) */
   --cible: 2.75rem;         /* zone cliquable minimale : 44 px */
+}
+
+/* Thème clair : choisi avec le bouton (data-theme="light"), ou réglage du système si le bouton n'a jamais servi.
+   Les deux blocs ci-dessous doivent rester identiques. */
+:root[data-theme="light"] {
+  color-scheme: light;
+  --fond: #FBF8F1;          /* ivoire */
+  --surface: #F2ECDF;       /* parchemin */
+  --bordure: #E0D8C6;       /* sable, décoratif */
+  --texte: #151412;
+  --texte-2: #5E5A53;
+  --lien: #8A6D12;          /* or foncé : liens et contour de focus */
+  --lien-survol: #151412;
+  --etoile: #8A6D12;        /* étoiles : or foncé en clair (l'or pur fait 1,9:1) */
+  --focus: #8A6D12;
+  --texte-badge: #FFFFFF;
+
+  --cat-fast-food: #4A5560;
+  --cat-gastronomique: #5B2A4E;
+  --cat-cuisine-maison: #7A5A12;
+  --cat-healthy: #2F6B4F;
+  --cat-desserts-patisserie: #A8325A;
+  --cat-en-cas: #9C4A1E;
+  --cat-street-food: #2E4A7D;
+  --cat-entrees: #1A5F6B;
+}
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme]) {
+    color-scheme: light;
+    --fond: #FBF8F1;
+    --surface: #F2ECDF;
+    --bordure: #E0D8C6;
+    --texte: #151412;
+    --texte-2: #5E5A53;
+    --lien: #8A6D12;
+    --lien-survol: #151412;
+    --etoile: #8A6D12;
+    --focus: #8A6D12;
+    --texte-badge: #FFFFFF;
+
+    --cat-fast-food: #4A5560;
+    --cat-gastronomique: #5B2A4E;
+    --cat-cuisine-maison: #7A5A12;
+    --cat-healthy: #2F6B4F;
+    --cat-desserts-patisserie: #A8325A;
+    --cat-en-cas: #9C4A1E;
+    --cat-street-food: #2E4A7D;
+    --cat-entrees: #1A5F6B;
+  }
 }
 
 /* ---------- Base ---------- */
@@ -107,10 +157,16 @@ h3 { font-weight: 700; font-size: 1.0625rem; }   /* 17 px */
 .entete__nav ul { list-style: none; margin: 0; padding: 0; display: flex; gap: var(--s1); }
 .entete__nav a { display: inline-flex; align-items: center; min-height: var(--cible); font-weight: 500; }
 .entete__nav [aria-current="page"] { color: var(--or); font-weight: 700; }
-.entete__loupe, .burger { display: grid; place-items: center; width: var(--cible); height: var(--cible);
+.entete__loupe, .burger, .theme-btn { display: grid; place-items: center; width: var(--cible); height: var(--cible);
                           border: 0; border-radius: var(--rayon); background: transparent; color: inherit;
                           font: inherit; font-size: 1.5rem; cursor: pointer; }
-.entete__loupe:hover, .burger:hover { color: var(--or-survol); }
+.entete__loupe:hover, .burger:hover, .theme-btn:hover { color: var(--or-survol); }
+/* Bouton de thème : disque coupé en deux, qui tourne d'un demi-tour en thème clair. Inutile sans JavaScript. */
+.theme-btn { display: none; }
+.js .theme-btn { display: grid; }
+.theme-btn svg { width: 1.375rem; height: 1.375rem; transition: transform .3s; }
+:root[data-theme="light"] .theme-btn svg { transform: rotate(180deg); }
+@media (prefers-reduced-motion: reduce) { .theme-btn svg { transition: none; } }
 
 /* Menu mobile (élément <dialog>) */
 .menu { width: min(100% - 2 * var(--s0), 24rem); margin: var(--s0) var(--s0) auto auto; padding: var(--s1);
