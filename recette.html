@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="recette.css">
+    <title>Le coin gourment</title>
+</head>
+<body>
+    <main>
+        <img class="primery_picture" src="image.jpg" alt="Description de l'image">
+        
+        <article>
+            <div class="pill-container">
+                <span class="cat-pill">Fast-Food</span>
+                <span class="cat-pill cat-pill-muted">Mexican</span>
+            </div>
+
+            <h1>Titre de la recette</h1>
+            
+            <section class="recipe-heading">
+                <div class="author-info"><em>Par <a class="author">auteur</a></em> <span class="date">[ date ]</span></div>
+                <p class="byline">Par <a href="#">Blogueur A</a> <span>·</span> <time datetime="2026-10-20">20 octobre 2026</time></p>
+
+                <div class="info-score">
+                    <span class="stars" aria-label="4 étoiles sur 5">★★★★</span>
+                    <span class="star-dim">☆</span>
+                    <span>4,3 (12)</span>
+                    <a href="#">· 5 commentaires</a>
+                </div>
+
+                <div class="command-container">
+                    <div class="fab btn">Aller à la recette ↓</div>
+                    <button class="fab"><img class="icon" src="assets/icons/svg/print_outline.svg" alt=""></button>
+                    <button class="fab"><img class="icon" src="assets/icons/svg/heart_outline.svg" alt=""></button>
+                </div>
+            </section>
+    
+            <section class="stats-grid">
+                <div class="stat-item"><span>Préparation</span><strong>20 <small>min</small></strong></div>
+                <div class="stat-item"><span>Cuisson</span><strong>6 <small>min</small></strong></div>
+                <div class="stat-item"><span>Total</span><strong>26 <small>min</small></strong></div>
+                <div class="stat-item"><span>Portion</span><strong>4 <small>min</small></strong></div>
+                <div class="stat-item"><span>Difficulté</span><strong>Facile</strong></div>
+                <div class="stat-item"><span>Coût</span><strong>€</strong></div>
+            </section>
+
+            <section class="intro-section">
+                <div class="title">INTRO DU BLOGUEUR</div>
+                une poule qui piquore une carotte.
+            </section>
+
+            <section class="ingredients-card" id="recette">
+                <div class="section-heading">
+                    <h2>Ingrédients</h2>
+                    <div class="command-container">
+                        <div class="fab">+</div>
+                        <div class="fab btn">
+                            4 portions
+                        </div>
+                        <div class="fab">−</div>
+                    </div>
+                </div>    
+                <div class="card">
+                    <h3>MARINADE</h3>
+                    <ul>
+                        <li><img class="icon" src="assets/icons/svg/crop_square.svg" alt=""> Ingrédient 1</li>
+                        <li><img class="icon" src="assets/icons/svg/crop_square.svg" alt=""> Ingrédient 2</li>
+                        <li><img class="icon" src="assets/icons/svg/crop_square.svg" alt=""> Ingrédient 3</li>
+                    </ul>
+                    <h3>GARNITURE</h3>
+                    <ul>
+                        <li><img class="icon" src="assets/icons/svg/crop_square.svg" alt=""> Ingrédient 1</li>
+                        <li><img class="icon" src="assets/icons/svg/crop_square.svg" alt=""> Ingrédient 2</li>
+                        <li><img class="icon" src="assets/icons/svg/crop_square.svg" alt=""> Ingrédient 3</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="preparation-card">
+                <h2>Préparation</h2>
+                <ul>
+                    <li>
+                        <div class="title">
+                            <div class="fab">1</div>
+                            <div>Préparer la marinade</div>
+                        </div>
+                        <div class="content">sdssddsssddsdssdssssdsdsdssds
+                            dsdssddsdssds
+                        </div>
+                    </li>
+                    <li>
+                        <div class="title">
+                            <div class="fab">2</div>
+                            <div>Préparer la marinade</div>
+                        </div>                        
+                        <!-- <img src="#" alt=""> -->
+                    </li>
+                </ul>
+            </section>  
+            
+            <section class="tips-card">
+                <div>Astuces et variantes</div>
+                <p>poule qui piquore une carotte.</p>
+            </section>
+            
+            <section class="tags-container">
+                Tags:
+                <div>Tag 1</div>
+                <div>Tag 2</div>
+                <div>Tag 3</div>
+            </section>
+
+            <section class="rating-card">
+                <h2>Vous l'avez testée ? Notez-la</h2>
+                <div class="command-container">
+                    <div class="fab">★</div>
+                    <div class="fab">★</div>
+                    <div class="fab">★</div>
+                    <div class="fab unabled">☆</div>
+                    <div class="fab unabled">☆</div>
+                </div>
+                <div class="info-score">Moyenne<span>4.3 / 5</span>sur 12 notes · 
+                    <a href="#">Connectez-vous</a> pour noter</div>
+            </section> 
+
+            <section class="comments-card">
+                <h2>Commentaires (5)</h2>
+                <div class="command-container">
+                    <div class="fab btn">Plus utiles</div>
+                    <div class="fab btn">Plus récents</div>
+                </div>
+                
+            </section>
+
+            <section class="comments-form">
+                <form>
+                    <caption>Votre commentaire</caption>
+                    
+                    <textarea id="comment" placeholder="Votre essai, une astuce..."></textarea>
+                    
+                    <label for="notify">
+                        <input type="checkbox" id="notify" name="notify">
+                        J'ai testé cette recette
+                    </label>
+                    
+                    <button class="fab btn" type="submit">Publier</button>
+                </form>
+            </section>
+
+            <section class="comments-list">
+                <ul>
+                    <li>
+                        <div class="member-info">
+                            <img src="member-avatar.jpg" alt="Avatar du membre">
+                            <span>
+                                <div>Membre_1</div>
+                                <div>il y a 2 jours</div>
+                            </span>
+                        </div>
+                        <div class="fab btn">A testé la recette</div>
+                        <p class="comment">Commentaire du membre...</p>
+                        <div class="command-container">
+                            <div class="fab btn"><span class="arrow">&#9660;</span>Utile (8)</div>
+                            <div class="fab btn"><span class="arrow">&#9650;</span> (0)</div>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+
+        </article>
+    </main>
+</body>
+</html>
