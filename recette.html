@@ -1,174 +1,245 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="fr">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="recette.css">
-    <title>Le coin gourment</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Titre de la recette — La Note Gourmande</title>
+  <meta name="description" content="Fiche recette : ingrédients, préparation, astuces, notes et commentaires.">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/image/la-note-gourmande-favicon/favicon-32.png">
+  <link rel="apple-touch-icon" href="assets/image/la-note-gourmande-favicon/apple-touch-icon.png">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="recette.css">
+  <script src="js/site.js"></script>
 </head>
+
 <body>
-    <main>
-        <img class="primery_picture" src="image.jpg" alt="Description de l'image">
-        
-        <article>
-            <div class="pill-container">
-                <span class="cat-pill">Fast-Food</span>
-                <span class="cat-pill cat-pill-muted">Mexican</span>
+
+  <a class="lien-evitement" href="#contenu">Aller au contenu</a>
+
+  <!-- En-tête commun (plus tard header.php). Pas de loupe ici : cette page n'a pas de champ de recherche. -->
+  <header class="entete">
+    <a href="index.html" class="entete__logo"><img src="assets/image/logo/la-note-gourmande-noir-or_v1.png"
+        alt="La Note Gourmande, accueil" height="48"></a>
+    <nav class="entete__nav" aria-label="Menu principal">
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="catalogue.html">Recettes</a></li>
+      </ul>
+    </nav>
+    <button type="button" class="burger" aria-label="Ouvrir le menu" aria-haspopup="dialog"
+      aria-controls="menu">☰</button>
+  </header>
+
+  <dialog id="menu" class="menu" aria-label="Menu principal">
+    <div class="menu__entete">
+      <strong>Menu</strong>
+      <button type="button" class="menu__fermer" aria-label="Fermer le menu">✕</button>
+    </div>
+    <ul>
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="catalogue.html">Recettes</a></li>
+    </ul>
+  </dialog>
+
+  <main id="contenu" class="conteneur">
+
+    <nav class="fil-ariane" aria-label="Fil d'Ariane">
+      <ol>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="catalogue.html">Recettes</a></li>
+        <li><a href="recette.html" aria-current="page">Titre de la recette</a></li>
+      </ol>
+    </nav>
+
+    <article class="recette">
+
+      <!-- Photo (4:3) puis titre et actions. À remplacer : <img src="..." alt="..."> à la place de .photo -->
+      <header class="recette__tete">
+        <div class="photo" role="img" aria-label="Photo de la recette (à venir)"></div>
+
+        <div class="recette__titre">
+          <p class="recette__cats">
+            <span class="badge" data-cat="fast-food">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" aria-hidden="true">
+                <path d="M3 12h18a9 9 0 0 1-18 0z" />
+                <path d="M8 8c0-2 2-2 2-4M14 8c0-2 2-2 2-4" />
+              </svg>
+              Fast-food
+            </span>
+            <a href="catalogue.html?region[]=mexique">Mexicaine</a>
+          </p>
+
+          <h1>Titre de la recette</h1>
+
+          <p class="recette__auteur">Par <a href="#">Blogueur A</a> · <time datetime="2026-10-20">20 octobre
+              2026</time></p>
+
+          <p class="recette__note">
+            <span class="etoiles" role="img" aria-label="4,3 sur 5">★★★★☆</span>
+            4,3 (12) · <a href="#commentaires">5 commentaires</a>
+          </p>
+
+          <div class="actions">
+            <a class="btn btn--or" href="#ingredients">Aller à la recette ↓</a>
+            <button type="button" class="rond" aria-label="Imprimer la recette"><span class="icone icone--imprimer"
+                aria-hidden="true"></span></button>
+            <button type="button" class="rond" aria-label="Ajouter aux favoris" aria-pressed="false"><span
+                class="icone icone--coeur" aria-hidden="true"></span></button>
+          </div>
+        </div>
+      </header>
+
+      <dl class="stats">
+        <div>
+          <dt>Préparation</dt>
+          <dd>20 <small>min</small></dd>
+        </div>
+        <div>
+          <dt>Cuisson</dt>
+          <dd>6 <small>min</small></dd>
+        </div>
+        <div>
+          <dt>Total</dt>
+          <dd>26 <small>min</small></dd>
+        </div>
+        <div>
+          <dt>Portions</dt>
+          <dd>4 <small>pers.</small></dd>
+        </div>
+        <div>
+          <dt>Difficulté</dt>
+          <dd>Facile</dd>
+        </div>
+        <div>
+          <dt>Coût</dt>
+          <dd>€</dd>
+        </div>
+      </dl>
+
+      <section class="intro" aria-labelledby="t-intro">
+        <h2 id="t-intro" class="etiquette">Intro du blogueur</h2>
+        <p>Une poule qui piquore une carotte.</p>
+      </section>
+
+      <!-- Ingrédients (colonne latérale en desktop) puis préparation -->
+      <div class="recette__corps">
+
+        <section class="ingredients carte-bloc" id="ingredients" aria-labelledby="t-ingredients">
+          <div class="ingredients__entete">
+            <h2 id="t-ingredients">Ingrédients</h2>
+            <div class="portions" role="group" aria-label="Nombre de portions">
+              <button type="button" class="rond" aria-label="Une portion de moins">−</button>
+              <output>4 portions</output>
+              <button type="button" class="rond" aria-label="Une portion de plus">+</button>
             </div>
+          </div>
 
-            <h1>Titre de la recette</h1>
-            
-            <section class="recipe-heading">
-                <div class="author-info"><em>Par <a class="author">auteur</a></em> <span class="date">[ date ]</span></div>
-                <p class="byline">Par <a href="#">Blogueur A</a> <span>·</span> <time datetime="2026-10-20">20 octobre 2026</time></p>
+          <h3 class="etiquette">Marinade</h3>
+          <ul class="liste-ingredients">
+            <li><label><input type="checkbox"> Ingrédient 1</label></li>
+            <li><label><input type="checkbox"> Ingrédient 2</label></li>
+            <li><label><input type="checkbox"> Ingrédient 3</label></li>
+          </ul>
 
-                <div class="info-score">
-                    <span class="stars" aria-label="4 étoiles sur 5">★★★★</span>
-                    <span class="star-dim">☆</span>
-                    <span>4,3 (12)</span>
-                    <a href="#">· 5 commentaires</a>
-                </div>
+          <h3 class="etiquette">Garniture</h3>
+          <ul class="liste-ingredients">
+            <li><label><input type="checkbox"> Ingrédient 1</label></li>
+            <li><label><input type="checkbox"> Ingrédient 2</label></li>
+            <li><label><input type="checkbox"> Ingrédient 3</label></li>
+          </ul>
+        </section>
 
-                <div class="command-container">
-                    <div class="fab btn">Aller à la recette ↓</div>
-                    <button class="fab"><img class="icon" src="assets/icons/svg/print_outline.svg" alt=""></button>
-                    <button class="fab"><img class="icon" src="assets/icons/svg/heart_outline.svg" alt=""></button>
-                </div>
-            </section>
-    
-            <section class="stats-grid">
-                <div class="stat-item"><span>Préparation</span><strong>20 <small>min</small></strong></div>
-                <div class="stat-item"><span>Cuisson</span><strong>6 <small>min</small></strong></div>
-                <div class="stat-item"><span>Total</span><strong>26 <small>min</small></strong></div>
-                <div class="stat-item"><span>Portion</span><strong>4 <small>min</small></strong></div>
-                <div class="stat-item"><span>Difficulté</span><strong>Facile</strong></div>
-                <div class="stat-item"><span>Coût</span><strong>€</strong></div>
-            </section>
+        <section class="preparation" aria-labelledby="t-preparation">
+          <h2 id="t-preparation">Préparation</h2>
+          <ol class="etapes">
+            <li>
+              <span class="num" aria-hidden="true">1</span>
+              <h3>Préparer la marinade</h3>
+              <p>Texte de l'étape à rédiger.</p>
+            </li>
+            <li>
+              <span class="num" aria-hidden="true">2</span>
+              <h3>Préparer la marinade</h3>
+              <!-- <img src="#" alt=""> -->
+            </li>
+          </ol>
+        </section>
+      </div>
 
-            <section class="intro-section">
-                <div class="title">INTRO DU BLOGUEUR</div>
-                une poule qui piquore une carotte.
-            </section>
+      <section class="astuces carte-bloc" aria-labelledby="t-astuces">
+        <h2 id="t-astuces" class="etiquette">Astuces et variantes</h2>
+        <p>Une poule qui piquore une carotte.</p>
+      </section>
 
-            <section class="ingredients-card" id="recette">
-                <div class="section-heading">
-                    <h2>Ingrédients</h2>
-                    <div class="command-container">
-                        <div class="fab">+</div>
-                        <div class="fab btn">
-                            4 portions
-                        </div>
-                        <div class="fab">−</div>
-                    </div>
-                </div>    
-                <div class="card">
-                    <h3>MARINADE</h3>
-                    <ul>
-                        <li><img class="icon" src="assets/icons/svg/crop_square.svg" alt=""> Ingrédient 1</li>
-                        <li><img class="icon" src="assets/icons/svg/crop_square.svg" alt=""> Ingrédient 2</li>
-                        <li><img class="icon" src="assets/icons/svg/crop_square.svg" alt=""> Ingrédient 3</li>
-                    </ul>
-                    <h3>GARNITURE</h3>
-                    <ul>
-                        <li><img class="icon" src="assets/icons/svg/crop_square.svg" alt=""> Ingrédient 1</li>
-                        <li><img class="icon" src="assets/icons/svg/crop_square.svg" alt=""> Ingrédient 2</li>
-                        <li><img class="icon" src="assets/icons/svg/crop_square.svg" alt=""> Ingrédient 3</li>
-                    </ul>
-                </div>
-            </section>
+      <section class="tags" aria-labelledby="t-tags">
+        <h2 id="t-tags" class="tags__titre">Tags</h2>
+        <ul>
+          <li><a href="catalogue.html?tag[]=tag-1">Tag 1</a></li>
+          <li><a href="catalogue.html?tag[]=tag-2">Tag 2</a></li>
+          <li><a href="catalogue.html?tag[]=tag-3">Tag 3</a></li>
+        </ul>
+      </section>
 
-            <section class="preparation-card">
-                <h2>Préparation</h2>
-                <ul>
-                    <li>
-                        <div class="title">
-                            <div class="fab">1</div>
-                            <div>Préparer la marinade</div>
-                        </div>
-                        <div class="content">sdssddsssddsdssdssssdsdsdssds
-                            dsdssddsdssds
-                        </div>
-                    </li>
-                    <li>
-                        <div class="title">
-                            <div class="fab">2</div>
-                            <div>Préparer la marinade</div>
-                        </div>                        
-                        <!-- <img src="#" alt=""> -->
-                    </li>
-                </ul>
-            </section>  
-            
-            <section class="tips-card">
-                <div>Astuces et variantes</div>
-                <p>poule qui piquore une carotte.</p>
-            </section>
-            
-            <section class="tags-container">
-                Tags:
-                <div>Tag 1</div>
-                <div>Tag 2</div>
-                <div>Tag 3</div>
-            </section>
+      <!-- Communauté : note, commentaires. Colonne de lecture (48 rem) -->
+      <div class="communaute">
 
-            <section class="rating-card">
-                <h2>Vous l'avez testée ? Notez-la</h2>
-                <div class="command-container">
-                    <div class="fab">★</div>
-                    <div class="fab">★</div>
-                    <div class="fab">★</div>
-                    <div class="fab unabled">☆</div>
-                    <div class="fab unabled">☆</div>
-                </div>
-                <div class="info-score">Moyenne<span>4.3 / 5</span>sur 12 notes · 
-                    <a href="#">Connectez-vous</a> pour noter</div>
-            </section> 
+        <section class="notation carte-bloc" aria-labelledby="t-notation">
+          <h2 id="t-notation">Vous l'avez testée ? Notez-la</h2>
+          <div class="notation__etoiles" role="group" aria-label="Votre note sur 5">
+            <button type="button" class="rond" aria-pressed="true" aria-label="1 étoile">★</button>
+            <button type="button" class="rond" aria-pressed="true" aria-label="2 étoiles">★</button>
+            <button type="button" class="rond" aria-pressed="true" aria-label="3 étoiles">★</button>
+            <button type="button" class="rond" aria-pressed="false" aria-label="4 étoiles">☆</button>
+            <button type="button" class="rond" aria-pressed="false" aria-label="5 étoiles">☆</button>
+          </div>
+          <p class="notation__moyenne">Moyenne <strong>4,3 / 5</strong> sur 12 notes ·
+            <a href="#">Connectez-vous</a> pour noter
+          </p>
+        </section>
 
-            <section class="comments-card">
-                <h2>Commentaires (5)</h2>
-                <div class="command-container">
-                    <div class="fab btn">Plus utiles</div>
-                    <div class="fab btn">Plus récents</div>
-                </div>
-                
-            </section>
+        <section class="commentaires" id="commentaires" aria-labelledby="t-commentaires">
+          <div class="commentaires__entete">
+            <h2 id="t-commentaires">Commentaires (5)</h2>
+            <div class="tri-commentaires" role="group" aria-label="Trier les commentaires">
+              <button type="button" class="btn btn--or" aria-pressed="true">Plus utiles</button>
+              <button type="button" class="btn btn--contour" aria-pressed="false">Plus récents</button>
+            </div>
+          </div>
 
-            <section class="comments-form">
-                <form>
-                    <caption>Votre commentaire</caption>
-                    
-                    <textarea id="comment" placeholder="Votre essai, une astuce..."></textarea>
-                    
-                    <label for="notify">
-                        <input type="checkbox" id="notify" name="notify">
-                        J'ai testé cette recette
-                    </label>
-                    
-                    <button class="fab btn" type="submit">Publier</button>
-                </form>
-            </section>
+          <form class="formulaire-commentaire carte-bloc" action="#" method="post">
+            <label for="commentaire">Votre commentaire</label>
+            <textarea id="commentaire" name="commentaire" placeholder="Votre essai, une astuce..."></textarea>
+            <label class="case"><input type="checkbox" name="teste"> J'ai testé cette recette</label>
+            <button type="submit" class="btn btn--or">Publier</button>
+          </form>
 
-            <section class="comments-list">
-                <ul>
-                    <li>
-                        <div class="member-info">
-                            <img src="member-avatar.jpg" alt="Avatar du membre">
-                            <span>
-                                <div>Membre_1</div>
-                                <div>il y a 2 jours</div>
-                            </span>
-                        </div>
-                        <div class="fab btn">A testé la recette</div>
-                        <p class="comment">Commentaire du membre...</p>
-                        <div class="command-container">
-                            <div class="fab btn"><span class="arrow">&#9660;</span>Utile (8)</div>
-                            <div class="fab btn"><span class="arrow">&#9650;</span> (0)</div>
-                        </div>
-                    </li>
-                </ul>
-            </section>
+          <ul class="liste-commentaires">
+            <li>
+              <div class="membre">
+                <span class="avatar" aria-hidden="true">M</span>
+                <p><strong>Membre_1</strong><br><time datetime="2026-11-03">il y a 2 jours</time></p>
+                <span class="a-teste">A testé la recette</span>
+              </div>
+              <p class="commentaire">Commentaire du membre...</p>
+              <div class="votes">
+                <button type="button" class="btn btn--contour" aria-label="Utile, 8 votes">▲ Utile (8)</button>
+                <button type="button" class="btn btn--contour" aria-label="Pas utile, 0 vote">▼ (0)</button>
+              </div>
+            </li>
+          </ul>
+        </section>
 
-        </article>
-    </main>
+      </div>
+    </article>
+  </main>
+
+  <!-- Pied de page commun (plus tard footer.php) -->
+  <footer class="pied">
+    <p>© 2026 La Note Gourmande · Recettes du monde</p>
+  </footer>
+
 </body>
+
 </html>
