@@ -72,3 +72,40 @@ Le site a deux thèmes. Un premier essai « sombre uniquement » (commit `b26d64
 - **Bouton** : `.theme-btn` dans l'en-tête de chaque page, entre la navigation et la loupe ou le burger. Disque coupé en deux qui fait un demi-tour en thème clair, 44 × 44 px, `aria-label` « Passer au thème clair » ou « Passer au thème sombre ». L'en-tête reste sombre dans les deux thèmes (logos pour fond noir).
 - **Vérifié** : clic, mémoire d'une page à l'autre, réglage du système sans choix, aucun débordement, aucune erreur en console.
 - **Étoiles** : or foncé #8A6D12 en clair (l'or pur fait 1,9:1 sur l'ivoire), or du logo en sombre.
+
+---
+
+# Recettes d'exemple et liens du catalogue (2026-11-05)
+
+Huit fiches recette d'exemple, une par catégorie, générées sur le modèle de `recette.html` : `recette-<nom>.html`.
+
+| Catégorie | Fiche | Origine |
+| --- | --- | --- |
+| Fast-food | `recette-cheeseburger-maison.html` | Américaine (Amériques) |
+| Gastronomique | `recette-magret-canard-cerises.html` | Française (Europe) |
+| Cuisine maison | `recette-poulet-yassa.html` | Sénégalaise (Afrique) |
+| Healthy | `recette-bowl-riz-tofu.html` | Japonaise (Asie) |
+| Desserts & pâtisserie | `recette-tarte-tatin.html` | Française (Europe) |
+| En-cas | `recette-houmous-pita.html` | Libanaise (Moyen-Orient) |
+| Street food | `recette-tacos-al-pastor.html` | Mexicaine (Amériques) |
+| Entrées | `recette-rouleaux-de-printemps.html` | Vietnamienne (Asie) |
+
+- **Catalogue** : `catalogue.html` montre dix cartes (les huit recettes plus « Banh mi » et « Falafels », qui n'ont pas encore de page et gardent le lien `#`), sans filtre actif ni case cochée au départ. Chaque carte de recette pointe vers sa fiche ; le filtre de catégorie, l'origine et les tags de chaque fiche pointent vers `catalogue.html?categorie[]=`, `region[]=` et `tag[]=`.
+- **Cohérence** : la note, le nombre de notes, le temps total et l'origine sont les mêmes sur la carte et sur la fiche. Les temps de marinade (yassa, tacos) sont dits dans l'intro et ne comptent pas dans le total.
+- **Données d'exemple** : textes, notes et commentaires sont inventés pour le prototype (noms `Membre_n`). Photos : blocs 4:3 à remplacer par `<img>`. Aucune note n'est cochée par défaut dans le bloc « Notez-la ».
+- **`recette.html`** reste le modèle générique de Raphaël (« Titre de la recette »), non lié au catalogue.
+- **Quand le PHP arrive** : une seule page `recette.php?id=` remplacera les huit fichiers.
+
+---
+
+# Photos des recettes (2026-11-05)
+
+Les huit recettes d'exemple ont une vraie photo : `assets/image/recettes/<nom>.webp` (4:3, 1000 × 750 px ou 960 × 720 px, 60 à 130 Ko).
+
+- **Origine et licences** : photos libres de droit de Wikimedia Commons (CC0, domaine public, CC BY, CC BY-SA), choisies une à une pour correspondre au plat. Auteur, licence et lien source de chacune sont dans `assets/image/recettes/CREDITS.md`.
+- **Crédit visible** : chaque fiche affiche sous la photo « Photo : auteur, licence, via Wikimedia Commons » (obligatoire pour CC BY et CC BY-SA, gardé aussi pour CC0). Les cartes du catalogue n'affichent pas le crédit : il est sur la fiche vers laquelle elles mènent.
+- **Retouches** : recadrage centré en 4:3 et conversion en WebP. Pas d'autre modification.
+- **Réserve** : « Bowl de riz » (CC BY-SA 2.0) et « Houmous » (CC BY-SA 4.0) sont sous licence avec partage dans les mêmes conditions : si on retouche ces deux images, la version retouchée garde la même licence.
+- **Alt** : chaque `<img>` a un texte alternatif en français qui décrit le plat. Fiche : image chargée tout de suite ; catalogue : `loading="lazy"`.
+- **CSS** : `img.photo` (dans `style.css`) remplit le cadre 4:3 comme le faisait le bloc vide ; `.recette__photo figcaption` pour le crédit (`recette.css`).
+- **Pas encore de photo** : « Banh mi » et « Falafels » (blocs vides) et `recette.html`.

@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tarte tatin — La Note Gourmande</title>
+  <meta name="description" content="La tarte renversée des sœurs Tatin : des pommes confites dans un caramel au beurre salé, sous une pâte feuilletée bien dorée.">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/image/la-note-gourmande-favicon/favicon-32.png">
+  <link rel="apple-touch-icon" href="assets/image/la-note-gourmande-favicon/apple-touch-icon.png">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="recette.css">
+  <script src="js/site.js"></script>
+</head>
+
+<body>
+
+  <a class="lien-evitement" href="#contenu">Aller au contenu</a>
+
+  <!-- En-tête commun (plus tard header.php). Pas de loupe ici : cette page n'a pas de champ de recherche. -->
+  <header class="entete">
+    <a href="index.html" class="entete__logo"><img src="assets/image/logo/la-note-gourmande-noir-or_v1.png"
+        alt="La Note Gourmande, accueil" height="48"></a>
+    <nav class="entete__nav" aria-label="Menu principal">
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="catalogue.html">Recettes</a></li>
+      </ul>
+    </nav>
+    <button type="button" class="theme-btn" aria-label="Passer au thème clair">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <circle cx="12" cy="12" r="9" />
+        <path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor" />
+      </svg>
+    </button>
+    <button type="button" class="burger" aria-label="Ouvrir le menu" aria-haspopup="dialog"
+      aria-controls="menu">☰</button>
+  </header>
+
+  <dialog id="menu" class="menu" aria-label="Menu principal">
+    <div class="menu__entete">
+      <strong>Menu</strong>
+      <button type="button" class="menu__fermer" aria-label="Fermer le menu">✕</button>
+    </div>
+    <ul>
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="catalogue.html">Recettes</a></li>
+    </ul>
+  </dialog>
+
+  <main id="contenu" class="conteneur">
+
+    <nav class="fil-ariane" aria-label="Fil d'Ariane">
+      <ol>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="catalogue.html">Recettes</a></li>
+        <li><a href="recette-tarte-tatin.html" aria-current="page">Tarte tatin</a></li>
+      </ol>
+    </nav>
+
+    <article class="recette">
+
+      <!-- Données d'exemple. Photo : voir assets/image/recettes/CREDITS.md -->
+      <header class="recette__tete">
+        <figure class="recette__photo">
+          <img class="photo" src="assets/image/recettes/tarte-tatin.webp" alt="Part de tarte tatin caramélisée, avec une boule de glace à la vanille" width="1000" height="750">
+          <figcaption>Photo : <a href="https://commons.wikimedia.org/wiki/File:Corner_restaurant,_Paris,_tarte_Tatin.jpg">Gerda Arendt</a>, <a href="http://creativecommons.org/publicdomain/zero/1.0/deed.en">CC0</a>, via Wikimedia Commons</figcaption>
+        </figure>
+
+        <div class="recette__titre">
+          <p class="recette__cats">
+            <span class="badge" data-cat="desserts-patisserie">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" aria-hidden="true">
+                <path d="M3 12h18a9 9 0 0 1-18 0z" />
+                <path d="M8 8c0-2 2-2 2-4M14 8c0-2 2-2 2-4" />
+              </svg>
+              Desserts &amp; pâtisserie
+            </span>
+            <a href="catalogue.html?region[]=europe">Française</a>
+          </p>
+
+          <h1>Tarte tatin</h1>
+
+          <p class="recette__auteur">Par <a href="#">Blogueur A</a> · <time datetime="2026-11-03">3 novembre 2026</time></p>
+
+          <p class="recette__note">
+            <span class="etoiles" role="img" aria-label="4,8 sur 5">★★★★★</span>
+            4,8 (21) · <a href="#commentaires">2 commentaires</a>
+          </p>
+
+          <div class="actions">
+            <a class="btn btn--or" href="#ingredients">Aller à la recette ↓</a>
+            <button type="button" class="rond" aria-label="Imprimer la recette"><span class="icone icone--imprimer"
+                aria-hidden="true"></span></button>
+            <button type="button" class="rond" aria-label="Ajouter aux favoris" aria-pressed="false"><span
+                class="icone icone--coeur" aria-hidden="true"></span></button>
+          </div>
+        </div>
+      </header>
+
+      <dl class="stats">
+        <div>
+          <dt>Préparation</dt>
+          <dd>25 <small>min</small></dd>
+        </div>
+        <div>
+          <dt>Cuisson</dt>
+          <dd>40 <small>min</small></dd>
+        </div>
+        <div>
+          <dt>Total</dt>
+          <dd>65 <small>min</small></dd>
+        </div>
+        <div>
+          <dt>Portions</dt>
+          <dd>6 <small>pers.</small></dd>
+        </div>
+        <div>
+          <dt>Difficulté</dt>
+          <dd>Moyen</dd>
+        </div>
+        <div>
+          <dt>Coût</dt>
+          <dd>€ <span class="sr-only">(économique)</span></dd>
+        </div>
+      </dl>
+
+      <section class="intro" aria-labelledby="t-intro">
+        <h2 id="t-intro" class="etiquette">Intro du blogueur</h2>
+        <p>La tarte renversée des sœurs Tatin : des pommes confites dans un caramel au beurre salé, sous une pâte feuilletée bien dorée. À servir tiède.</p>
+      </section>
+
+      <div class="recette__corps">
+
+        <section class="ingredients carte-bloc" id="ingredients" aria-labelledby="t-ingredients">
+          <div class="ingredients__entete">
+            <h2 id="t-ingredients">Ingrédients</h2>
+            <div class="portions" role="group" aria-label="Nombre de portions">
+              <button type="button" class="rond" aria-label="Une portion de moins">−</button>
+              <output>6 portions</output>
+              <button type="button" class="rond" aria-label="Une portion de plus">+</button>
+            </div>
+          </div>
+
+          <h3 class="etiquette">Caramel</h3>
+          <ul class="liste-ingredients">
+            <li><label><input type="checkbox"> 100 g de sucre</label></li>
+            <li><label><input type="checkbox"> 50 g de beurre demi-sel</label></li>
+          </ul>
+
+          <h3 class="etiquette">Tarte</h3>
+          <ul class="liste-ingredients">
+            <li><label><input type="checkbox"> 8 pommes fermes (boskoop ou golden)</label></li>
+            <li><label><input type="checkbox"> 1 pâte feuilletée pur beurre</label></li>
+            <li><label><input type="checkbox"> 1 pincée de cannelle (facultatif)</label></li>
+          </ul>
+        </section>
+
+        <section class="preparation" aria-labelledby="t-preparation">
+          <h2 id="t-preparation">Préparation</h2>
+          <ol class="etapes">
+            <li>
+              <span class="num" aria-hidden="true">1</span>
+              <h3>Préchauffer et préparer le caramel</h3>
+              <p>Allumez le four à 180 °C. Dans un moule en métal qui va au four (ou une poêle), faites fondre le sucre à sec jusqu'à une couleur d'ambre, puis ajoutez le beurre hors du feu.</p>
+            </li>
+            <li>
+              <span class="num" aria-hidden="true">2</span>
+              <h3>Disposer les pommes</h3>
+              <p>Épluchez les pommes, coupez-les en quarts et serrez-les côté arrondi contre le caramel. Laissez-les cuire 10 minutes à feu doux.</p>
+            </li>
+            <li>
+              <span class="num" aria-hidden="true">3</span>
+              <h3>Couvrir de pâte</h3>
+              <p>Posez la pâte sur les pommes, rentrez les bords à l'intérieur du moule et piquez-la à la fourchette.</p>
+            </li>
+            <li>
+              <span class="num" aria-hidden="true">4</span>
+              <h3>Cuire</h3>
+              <p>Enfournez 30 minutes, jusqu'à ce que la pâte soit bien dorée.</p>
+            </li>
+            <li>
+              <span class="num" aria-hidden="true">5</span>
+              <h3>Démouler</h3>
+              <p>Laissez tiédir 10 minutes, puis retournez la tarte d'un geste franc sur un plat. Servez tiède, avec de la crème fraîche.</p>
+            </li>
+          </ol>
+        </section>
+      </div>
+
+      <section class="astuces carte-bloc" aria-labelledby="t-astuces">
+        <h2 id="t-astuces" class="etiquette">Astuces et variantes</h2>
+        <p>Serrez bien les pommes : elles fondent en cuisant et laissent du vide. Une pointe de cannelle dans le caramel parfume l'ensemble.</p>
+      </section>
+
+      <section class="tags" aria-labelledby="t-tags">
+        <h2 id="t-tags" class="tags__titre">Tags</h2>
+        <ul>
+          <li><a href="catalogue.html?tag[]=vegetarien">Végétarien</a></li>
+          <li><a href="catalogue.html?tag[]=automne">Automne</a></li>
+          <li><a href="catalogue.html?tag[]=classique">Classique</a></li>
+        </ul>
+      </section>
+
+      <div class="communaute">
+
+        <section class="notation carte-bloc" aria-labelledby="t-notation">
+          <h2 id="t-notation">Vous l'avez testée ? Notez-la</h2>
+          <div class="notation__etoiles" role="group" aria-label="Votre note sur 5">
+            <button type="button" class="rond" aria-pressed="false" aria-label="1 étoile">☆</button>
+            <button type="button" class="rond" aria-pressed="false" aria-label="2 étoiles">☆</button>
+            <button type="button" class="rond" aria-pressed="false" aria-label="3 étoiles">☆</button>
+            <button type="button" class="rond" aria-pressed="false" aria-label="4 étoiles">☆</button>
+            <button type="button" class="rond" aria-pressed="false" aria-label="5 étoiles">☆</button>
+          </div>
+          <p class="notation__moyenne">Moyenne <strong>4,8 / 5</strong> sur 21 notes ·
+            <a href="#">Connectez-vous</a> pour noter
+          </p>
+        </section>
+
+        <section class="commentaires" id="commentaires" aria-labelledby="t-commentaires">
+          <div class="commentaires__entete">
+            <h2 id="t-commentaires">Commentaires (2)</h2>
+            <div class="tri-commentaires" role="group" aria-label="Trier les commentaires">
+              <button type="button" class="btn btn--or" aria-pressed="true">Plus utiles</button>
+              <button type="button" class="btn btn--contour" aria-pressed="false">Plus récents</button>
+            </div>
+          </div>
+
+          <form class="formulaire-commentaire carte-bloc" action="#" method="post">
+            <label for="commentaire">Votre commentaire</label>
+            <textarea id="commentaire" name="commentaire" placeholder="Votre essai, une astuce..."></textarea>
+            <label class="case"><input type="checkbox" name="teste"> J'ai testé cette recette</label>
+            <button type="submit" class="btn btn--or">Publier</button>
+          </form>
+
+          <ul class="liste-commentaires">
+            <li>
+              <div class="membre">
+                <span class="avatar" aria-hidden="true">M</span>
+                <p><strong>Membre_1</strong><br><time datetime="2026-11-05">5 novembre 2026</time></p>
+                <span class="a-teste">A testé la recette</span>
+              </div>
+              <p class="commentaire">Le caramel est parfait, mes invités en ont repris deux fois.</p>
+              <div class="votes">
+                <button type="button" class="btn btn--contour" aria-label="Utile">▲ Utile</button>
+                <button type="button" class="btn btn--contour" aria-label="Pas utile">▼</button>
+              </div>
+            </li>
+            <li>
+              <div class="membre">
+                <span class="avatar" aria-hidden="true">M</span>
+                <p><strong>Membre_2</strong><br><time datetime="2026-11-06">6 novembre 2026</time></p>
+              </div>
+              <p class="commentaire">Plus facile que je ne le pensais, merci pour le geste du renversement.</p>
+              <div class="votes">
+                <button type="button" class="btn btn--contour" aria-label="Utile">▲ Utile</button>
+                <button type="button" class="btn btn--contour" aria-label="Pas utile">▼</button>
+              </div>
+            </li>
+          </ul>
+        </section>
+
+      </div>
+    </article>
+  </main>
+
+  <!-- Pied de page commun (plus tard footer.php) -->
+  <footer class="pied">
+    <p>© 2026 La Note Gourmande · Recettes du monde</p>
+  </footer>
+
+</body>
+
+</html>

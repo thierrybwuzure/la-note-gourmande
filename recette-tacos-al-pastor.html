@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tacos al pastor — La Note Gourmande</title>
+  <meta name="description" content="Le taco des rues de Mexico : du porc mariné aux piments et à l&#x27;ananas, saisi vif et servi sur une tortilla de maïs.">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/image/la-note-gourmande-favicon/favicon-32.png">
+  <link rel="apple-touch-icon" href="assets/image/la-note-gourmande-favicon/apple-touch-icon.png">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="recette.css">
+  <script src="js/site.js"></script>
+</head>
+
+<body>
+
+  <a class="lien-evitement" href="#contenu">Aller au contenu</a>
+
+  <!-- En-tête commun (plus tard header.php). Pas de loupe ici : cette page n'a pas de champ de recherche. -->
+  <header class="entete">
+    <a href="index.html" class="entete__logo"><img src="assets/image/logo/la-note-gourmande-noir-or_v1.png"
+        alt="La Note Gourmande, accueil" height="48"></a>
+    <nav class="entete__nav" aria-label="Menu principal">
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="catalogue.html">Recettes</a></li>
+      </ul>
+    </nav>
+    <button type="button" class="theme-btn" aria-label="Passer au thème clair">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <circle cx="12" cy="12" r="9" />
+        <path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor" />
+      </svg>
+    </button>
+    <button type="button" class="burger" aria-label="Ouvrir le menu" aria-haspopup="dialog"
+      aria-controls="menu">☰</button>
+  </header>
+
+  <dialog id="menu" class="menu" aria-label="Menu principal">
+    <div class="menu__entete">
+      <strong>Menu</strong>
+      <button type="button" class="menu__fermer" aria-label="Fermer le menu">✕</button>
+    </div>
+    <ul>
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="catalogue.html">Recettes</a></li>
+    </ul>
+  </dialog>
+
+  <main id="contenu" class="conteneur">
+
+    <nav class="fil-ariane" aria-label="Fil d'Ariane">
+      <ol>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="catalogue.html">Recettes</a></li>
+        <li><a href="recette-tacos-al-pastor.html" aria-current="page">Tacos al pastor</a></li>
+      </ol>
+    </nav>
+
+    <article class="recette">
+
+      <!-- Données d'exemple. Photo : voir assets/image/recettes/CREDITS.md -->
+      <header class="recette__tete">
+        <figure class="recette__photo">
+          <img class="photo" src="assets/image/recettes/tacos-al-pastor.webp" alt="Tacos al pastor garnis de porc mariné et de morceaux d&#x27;ananas" width="1000" height="750">
+          <figcaption>Photo : <a href="https://commons.wikimedia.org/wiki/File:Al_pastor_tacos_2.jpg">T.Tseng</a>, <a href="https://creativecommons.org/licenses/by/2.0">CC BY 2.0</a>, via Wikimedia Commons</figcaption>
+        </figure>
+
+        <div class="recette__titre">
+          <p class="recette__cats">
+            <span class="badge" data-cat="street-food">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" aria-hidden="true">
+                <path d="M3 12h18a9 9 0 0 1-18 0z" />
+                <path d="M8 8c0-2 2-2 2-4M14 8c0-2 2-2 2-4" />
+              </svg>
+              Street food
+            </span>
+            <a href="catalogue.html?region[]=ameriques">Mexicaine</a>
+          </p>
+
+          <h1>Tacos al pastor</h1>
+
+          <p class="recette__auteur">Par <a href="#">Blogueur A</a> · <time datetime="2026-10-29">29 octobre 2026</time></p>
+
+          <p class="recette__note">
+            <span class="etoiles" role="img" aria-label="4,3 sur 5">★★★★☆</span>
+            4,3 (12) · <a href="#commentaires">2 commentaires</a>
+          </p>
+
+          <div class="actions">
+            <a class="btn btn--or" href="#ingredients">Aller à la recette ↓</a>
+            <button type="button" class="rond" aria-label="Imprimer la recette"><span class="icone icone--imprimer"
+                aria-hidden="true"></span></button>
+            <button type="button" class="rond" aria-label="Ajouter aux favoris" aria-pressed="false"><span
+                class="icone icone--coeur" aria-hidden="true"></span></button>
+          </div>
+        </div>
+      </header>
+
+      <dl class="stats">
+        <div>
+          <dt>Préparation</dt>
+          <dd>25 <small>min</small></dd>
+        </div>
+        <div>
+          <dt>Cuisson</dt>
+          <dd>20 <small>min</small></dd>
+        </div>
+        <div>
+          <dt>Total</dt>
+          <dd>45 <small>min</small></dd>
+        </div>
+        <div>
+          <dt>Portions</dt>
+          <dd>4 <small>pers.</small></dd>
+        </div>
+        <div>
+          <dt>Difficulté</dt>
+          <dd>Moyen</dd>
+        </div>
+        <div>
+          <dt>Coût</dt>
+          <dd>€€ <span class="sr-only">(moyen)</span></dd>
+        </div>
+      </dl>
+
+      <section class="intro" aria-labelledby="t-intro">
+        <h2 id="t-intro" class="etiquette">Intro du blogueur</h2>
+        <p>Le taco des rues de Mexico : du porc mariné aux piments et à l'ananas, saisi vif et servi sur une tortilla de maïs. Comptez 1 heure de marinade en plus du temps indiqué.</p>
+      </section>
+
+      <div class="recette__corps">
+
+        <section class="ingredients carte-bloc" id="ingredients" aria-labelledby="t-ingredients">
+          <div class="ingredients__entete">
+            <h2 id="t-ingredients">Ingrédients</h2>
+            <div class="portions" role="group" aria-label="Nombre de portions">
+              <button type="button" class="rond" aria-label="Une portion de moins">−</button>
+              <output>4 portions</output>
+              <button type="button" class="rond" aria-label="Une portion de plus">+</button>
+            </div>
+          </div>
+
+          <h3 class="etiquette">Viande</h3>
+          <ul class="liste-ingredients">
+            <li><label><input type="checkbox"> 700 g d'échine de porc en fines tranches</label></li>
+            <li><label><input type="checkbox"> 2 piments guajillo (ou 1 c. à soupe de paprika fumé)</label></li>
+            <li><label><input type="checkbox"> 3 gousses d'ail</label></li>
+            <li><label><input type="checkbox"> 10 cl de jus d'ananas</label></li>
+            <li><label><input type="checkbox"> 2 c. à soupe de vinaigre blanc</label></li>
+            <li><label><input type="checkbox"> 1 c. à café de cumin</label></li>
+            <li><label><input type="checkbox"> 1 c. à café d'origan</label></li>
+            <li><label><input type="checkbox"> Sel</label></li>
+          </ul>
+
+          <h3 class="etiquette">Service</h3>
+          <ul class="liste-ingredients">
+            <li><label><input type="checkbox"> 12 petites tortillas de maïs</label></li>
+            <li><label><input type="checkbox"> 1/4 d'ananas en petits dés</label></li>
+            <li><label><input type="checkbox"> 1 oignon blanc</label></li>
+            <li><label><input type="checkbox"> 1 bouquet de coriandre</label></li>
+            <li><label><input type="checkbox"> 2 citrons verts</label></li>
+          </ul>
+        </section>
+
+        <section class="preparation" aria-labelledby="t-preparation">
+          <h2 id="t-preparation">Préparation</h2>
+          <ol class="etapes">
+            <li>
+              <span class="num" aria-hidden="true">1</span>
+              <h3>Préparer la marinade</h3>
+              <p>Faites tremper les piments 10 minutes dans l'eau chaude, puis mixez-les avec l'ail, le jus d'ananas, le vinaigre, le cumin, l'origan et du sel.</p>
+            </li>
+            <li>
+              <span class="num" aria-hidden="true">2</span>
+              <h3>Mariner</h3>
+              <p>Enrobez la viande de marinade et laissez-la reposer au frais 1 heure au minimum.</p>
+            </li>
+            <li>
+              <span class="num" aria-hidden="true">3</span>
+              <h3>Saisir</h3>
+              <p>Faites dorer la viande à feu vif dans une poêle très chaude, en deux fois pour qu'elle ne bouille pas, 4 minutes chaque fournée.</p>
+            </li>
+            <li>
+              <span class="num" aria-hidden="true">4</span>
+              <h3>Réchauffer les tortillas</h3>
+              <p>Passez-les 30 secondes de chaque côté dans une poêle sèche.</p>
+            </li>
+            <li>
+              <span class="num" aria-hidden="true">5</span>
+              <h3>Garnir</h3>
+              <p>Répartissez la viande, l'ananas, l'oignon haché et la coriandre. Servez avec un quartier de citron vert.</p>
+            </li>
+          </ol>
+        </section>
+      </div>
+
+      <section class="astuces carte-bloc" aria-labelledby="t-astuces">
+        <h2 id="t-astuces" class="etiquette">Astuces et variantes</h2>
+        <p>Pas besoin de broche verticale : une poêle très chaude suffit. Ne la surchargez pas, la viande doit dorer et non bouillir.</p>
+      </section>
+
+      <section class="tags" aria-labelledby="t-tags">
+        <h2 id="t-tags" class="tags__titre">Tags</h2>
+        <ul>
+          <li><a href="catalogue.html?tag[]=apero">Apéro</a></li>
+          <li><a href="catalogue.html?tag[]=epice">Épicé</a></li>
+          <li><a href="catalogue.html?tag[]=mexique">Mexique</a></li>
+        </ul>
+      </section>
+
+      <div class="communaute">
+
+        <section class="notation carte-bloc" aria-labelledby="t-notation">
+          <h2 id="t-notation">Vous l'avez testée ? Notez-la</h2>
+          <div class="notation__etoiles" role="group" aria-label="Votre note sur 5">
+            <button type="button" class="rond" aria-pressed="false" aria-label="1 étoile">☆</button>
+            <button type="button" class="rond" aria-pressed="false" aria-label="2 étoiles">☆</button>
+            <button type="button" class="rond" aria-pressed="false" aria-label="3 étoiles">☆</button>
+            <button type="button" class="rond" aria-pressed="false" aria-label="4 étoiles">☆</button>
+            <button type="button" class="rond" aria-pressed="false" aria-label="5 étoiles">☆</button>
+          </div>
+          <p class="notation__moyenne">Moyenne <strong>4,3 / 5</strong> sur 12 notes ·
+            <a href="#">Connectez-vous</a> pour noter
+          </p>
+        </section>
+
+        <section class="commentaires" id="commentaires" aria-labelledby="t-commentaires">
+          <div class="commentaires__entete">
+            <h2 id="t-commentaires">Commentaires (2)</h2>
+            <div class="tri-commentaires" role="group" aria-label="Trier les commentaires">
+              <button type="button" class="btn btn--or" aria-pressed="true">Plus utiles</button>
+              <button type="button" class="btn btn--contour" aria-pressed="false">Plus récents</button>
+            </div>
+          </div>
+
+          <form class="formulaire-commentaire carte-bloc" action="#" method="post">
+            <label for="commentaire">Votre commentaire</label>
+            <textarea id="commentaire" name="commentaire" placeholder="Votre essai, une astuce..."></textarea>
+            <label class="case"><input type="checkbox" name="teste"> J'ai testé cette recette</label>
+            <button type="submit" class="btn btn--or">Publier</button>
+          </form>
+
+          <ul class="liste-commentaires">
+            <li>
+              <div class="membre">
+                <span class="avatar" aria-hidden="true">M</span>
+                <p><strong>Membre_2</strong><br><time datetime="2026-10-31">31 octobre 2026</time></p>
+                <span class="a-teste">A testé la recette</span>
+              </div>
+              <p class="commentaire">L'ananas change tout. J'ai doublé la marinade, c'était encore mieux.</p>
+              <div class="votes">
+                <button type="button" class="btn btn--contour" aria-label="Utile">▲ Utile</button>
+                <button type="button" class="btn btn--contour" aria-label="Pas utile">▼</button>
+              </div>
+            </li>
+            <li>
+              <div class="membre">
+                <span class="avatar" aria-hidden="true">M</span>
+                <p><strong>Membre_4</strong><br><time datetime="2026-11-01">1 novembre 2026</time></p>
+              </div>
+              <p class="commentaire">Délicieux, mais j'ai dû remplacer le guajillo par du paprika fumé.</p>
+              <div class="votes">
+                <button type="button" class="btn btn--contour" aria-label="Utile">▲ Utile</button>
+                <button type="button" class="btn btn--contour" aria-label="Pas utile">▼</button>
+              </div>
+            </li>
+          </ul>
+        </section>
+
+      </div>
+    </article>
+  </main>
+
+  <!-- Pied de page commun (plus tard footer.php) -->
+  <footer class="pied">
+    <p>© 2026 La Note Gourmande · Recettes du monde</p>
+  </footer>
+
+</body>
+
+</html>

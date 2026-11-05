@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bowl de riz, tofu mariné et légumes croquants — La Note Gourmande</title>
+  <meta name="description" content="Un bol complet et coloré : du riz, du tofu doré à la poêle, des légumes frais et une sauce soja-citron vert.">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/image/la-note-gourmande-favicon/favicon-32.png">
+  <link rel="apple-touch-icon" href="assets/image/la-note-gourmande-favicon/apple-touch-icon.png">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="recette.css">
+  <script src="js/site.js"></script>
+</head>
+
+<body>
+
+  <a class="lien-evitement" href="#contenu">Aller au contenu</a>
+
+  <!-- En-tête commun (plus tard header.php). Pas de loupe ici : cette page n'a pas de champ de recherche. -->
+  <header class="entete">
+    <a href="index.html" class="entete__logo"><img src="assets/image/logo/la-note-gourmande-noir-or_v1.png"
+        alt="La Note Gourmande, accueil" height="48"></a>
+    <nav class="entete__nav" aria-label="Menu principal">
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="catalogue.html">Recettes</a></li>
+      </ul>
+    </nav>
+    <button type="button" class="theme-btn" aria-label="Passer au thème clair">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <circle cx="12" cy="12" r="9" />
+        <path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor" />
+      </svg>
+    </button>
+    <button type="button" class="burger" aria-label="Ouvrir le menu" aria-haspopup="dialog"
+      aria-controls="menu">☰</button>
+  </header>
+
+  <dialog id="menu" class="menu" aria-label="Menu principal">
+    <div class="menu__entete">
+      <strong>Menu</strong>
+      <button type="button" class="menu__fermer" aria-label="Fermer le menu">✕</button>
+    </div>
+    <ul>
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="catalogue.html">Recettes</a></li>
+    </ul>
+  </dialog>
+
+  <main id="contenu" class="conteneur">
+
+    <nav class="fil-ariane" aria-label="Fil d'Ariane">
+      <ol>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="catalogue.html">Recettes</a></li>
+        <li><a href="recette-bowl-riz-tofu.html" aria-current="page">Bowl de riz, tofu mariné et légumes croquants</a></li>
+      </ol>
+    </nav>
+
+    <article class="recette">
+
+      <!-- Données d'exemple. Photo : voir assets/image/recettes/CREDITS.md -->
+      <header class="recette__tete">
+        <figure class="recette__photo">
+          <img class="photo" src="assets/image/recettes/bowl-riz-tofu.webp" alt="Bol végétal garni d&#x27;edamame, de carotte râpée, de concombre, de chou rouge et de tomates cerises" width="1000" height="750">
+          <figcaption>Photo : <a href="https://commons.wikimedia.org/wiki/File:Healthy_Vegan_Buddha_Bowl.jpg">FitTasteTic</a>, <a href="https://creativecommons.org/licenses/by-sa/2.0">CC BY-SA 2.0</a>, via Wikimedia Commons</figcaption>
+        </figure>
+
+        <div class="recette__titre">
+          <p class="recette__cats">
+            <span class="badge" data-cat="healthy">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" aria-hidden="true">
+                <path d="M3 12h18a9 9 0 0 1-18 0z" />
+                <path d="M8 8c0-2 2-2 2-4M14 8c0-2 2-2 2-4" />
+              </svg>
+              Healthy
+            </span>
+            <a href="catalogue.html?region[]=asie">Japonaise</a>
+          </p>
+
+          <h1>Bowl de riz, tofu mariné et légumes croquants</h1>
+
+          <p class="recette__auteur">Par <a href="#">Blogueur B</a> · <time datetime="2026-10-20">20 octobre 2026</time></p>
+
+          <p class="recette__note">
+            <span class="etoiles" role="img" aria-label="4,2 sur 5">★★★★☆</span>
+            4,2 (7) · <a href="#commentaires">1 commentaire</a>
+          </p>
+
+          <div class="actions">
+            <a class="btn btn--or" href="#ingredients">Aller à la recette ↓</a>
+            <button type="button" class="rond" aria-label="Imprimer la recette"><span class="icone icone--imprimer"
+                aria-hidden="true"></span></button>
+            <button type="button" class="rond" aria-label="Ajouter aux favoris" aria-pressed="false"><span
+                class="icone icone--coeur" aria-hidden="true"></span></button>
+          </div>
+        </div>
+      </header>
+
+      <dl class="stats">
+        <div>
+          <dt>Préparation</dt>
+          <dd>25 <small>min</small></dd>
+        </div>
+        <div>
+          <dt>Cuisson</dt>
+          <dd>15 <small>min</small></dd>
+        </div>
+        <div>
+          <dt>Total</dt>
+          <dd>40 <small>min</small></dd>
+        </div>
+        <div>
+          <dt>Portions</dt>
+          <dd>4 <small>pers.</small></dd>
+        </div>
+        <div>
+          <dt>Difficulté</dt>
+          <dd>Facile</dd>
+        </div>
+        <div>
+          <dt>Coût</dt>
+          <dd>€ <span class="sr-only">(économique)</span></dd>
+        </div>
+      </dl>
+
+      <section class="intro" aria-labelledby="t-intro">
+        <h2 id="t-intro" class="etiquette">Intro du blogueur</h2>
+        <p>Un bol complet et coloré : du riz, du tofu doré à la poêle, des légumes frais et une sauce soja-citron vert. 100 % végétal, prêt en 40 minutes.</p>
+      </section>
+
+      <div class="recette__corps">
+
+        <section class="ingredients carte-bloc" id="ingredients" aria-labelledby="t-ingredients">
+          <div class="ingredients__entete">
+            <h2 id="t-ingredients">Ingrédients</h2>
+            <div class="portions" role="group" aria-label="Nombre de portions">
+              <button type="button" class="rond" aria-label="Une portion de moins">−</button>
+              <output>4 portions</output>
+              <button type="button" class="rond" aria-label="Une portion de plus">+</button>
+            </div>
+          </div>
+
+          <h3 class="etiquette">Tofu mariné</h3>
+          <ul class="liste-ingredients">
+            <li><label><input type="checkbox"> 400 g de tofu ferme</label></li>
+            <li><label><input type="checkbox"> 3 c. à soupe de sauce soja</label></li>
+            <li><label><input type="checkbox"> 1 c. à soupe d'huile de sésame</label></li>
+            <li><label><input type="checkbox"> 1 c. à soupe de vinaigre de riz</label></li>
+            <li><label><input type="checkbox"> 1 c. à café de gingembre râpé</label></li>
+          </ul>
+
+          <h3 class="etiquette">Bowl</h3>
+          <ul class="liste-ingredients">
+            <li><label><input type="checkbox"> 300 g de riz à sushi</label></li>
+            <li><label><input type="checkbox"> 2 carottes</label></li>
+            <li><label><input type="checkbox"> 1 concombre</label></li>
+            <li><label><input type="checkbox"> 1 avocat</label></li>
+            <li><label><input type="checkbox"> 150 g d'edamame surgelés</label></li>
+            <li><label><input type="checkbox"> 1 c. à soupe de graines de sésame</label></li>
+          </ul>
+
+          <h3 class="etiquette">Sauce</h3>
+          <ul class="liste-ingredients">
+            <li><label><input type="checkbox"> 2 c. à soupe de sauce soja</label></li>
+            <li><label><input type="checkbox"> 1 c. à soupe de jus de citron vert</label></li>
+            <li><label><input type="checkbox"> 1 c. à café de sirop d'agave</label></li>
+          </ul>
+        </section>
+
+        <section class="preparation" aria-labelledby="t-preparation">
+          <h2 id="t-preparation">Préparation</h2>
+          <ol class="etapes">
+            <li>
+              <span class="num" aria-hidden="true">1</span>
+              <h3>Mariner le tofu</h3>
+              <p>Coupez le tofu en cubes et enrobez-le de sauce soja, d'huile de sésame, de vinaigre et de gingembre. Laissez reposer 15 minutes.</p>
+            </li>
+            <li>
+              <span class="num" aria-hidden="true">2</span>
+              <h3>Cuire le riz</h3>
+              <p>Rincez le riz, puis faites-le cuire selon les indications du paquet. Laissez-le tiédir.</p>
+            </li>
+            <li>
+              <span class="num" aria-hidden="true">3</span>
+              <h3>Dorer le tofu</h3>
+              <p>Faites-le revenir 8 minutes à la poêle, en le retournant, jusqu'à ce qu'il soit bien doré.</p>
+            </li>
+            <li>
+              <span class="num" aria-hidden="true">4</span>
+              <h3>Préparer les légumes</h3>
+              <p>Plongez les edamame 3 minutes dans l'eau bouillante. Râpez les carottes, tranchez le concombre et l'avocat.</p>
+            </li>
+            <li>
+              <span class="num" aria-hidden="true">5</span>
+              <h3>Assembler</h3>
+              <p>Répartissez le riz dans quatre bols, ajoutez le tofu et les légumes, arrosez de sauce et parsemez de sésame.</p>
+            </li>
+          </ol>
+        </section>
+      </div>
+
+      <section class="astuces carte-bloc" aria-labelledby="t-astuces">
+        <h2 id="t-astuces" class="etiquette">Astuces et variantes</h2>
+        <p>Pressez le tofu 10 minutes dans un torchon avant de le couper : il absorbera mieux la marinade et dorera plus vite.</p>
+      </section>
+
+      <section class="tags" aria-labelledby="t-tags">
+        <h2 id="t-tags" class="tags__titre">Tags</h2>
+        <ul>
+          <li><a href="catalogue.html?tag[]=vegan">Vegan</a></li>
+          <li><a href="catalogue.html?tag[]=vegetarien">Végétarien</a></li>
+          <li><a href="catalogue.html?tag[]=sans-lactose">Sans lactose</a></li>
+        </ul>
+      </section>
+
+      <div class="communaute">
+
+        <section class="notation carte-bloc" aria-labelledby="t-notation">
+          <h2 id="t-notation">Vous l'avez testée ? Notez-la</h2>
+          <div class="notation__etoiles" role="group" aria-label="Votre note sur 5">
+            <button type="button" class="rond" aria-pressed="false" aria-label="1 étoile">☆</button>
+            <button type="button" class="rond" aria-pressed="false" aria-label="2 étoiles">☆</button>
+            <button type="button" class="rond" aria-pressed="false" aria-label="3 étoiles">☆</button>
+            <button type="button" class="rond" aria-pressed="false" aria-label="4 étoiles">☆</button>
+            <button type="button" class="rond" aria-pressed="false" aria-label="5 étoiles">☆</button>
+          </div>
+          <p class="notation__moyenne">Moyenne <strong>4,2 / 5</strong> sur 7 notes ·
+            <a href="#">Connectez-vous</a> pour noter
+          </p>
+        </section>
+
+        <section class="commentaires" id="commentaires" aria-labelledby="t-commentaires">
+          <div class="commentaires__entete">
+            <h2 id="t-commentaires">Commentaires (1)</h2>
+            <div class="tri-commentaires" role="group" aria-label="Trier les commentaires">
+              <button type="button" class="btn btn--or" aria-pressed="true">Plus utiles</button>
+              <button type="button" class="btn btn--contour" aria-pressed="false">Plus récents</button>
+            </div>
+          </div>
+
+          <form class="formulaire-commentaire carte-bloc" action="#" method="post">
+            <label for="commentaire">Votre commentaire</label>
+            <textarea id="commentaire" name="commentaire" placeholder="Votre essai, une astuce..."></textarea>
+            <label class="case"><input type="checkbox" name="teste"> J'ai testé cette recette</label>
+            <button type="submit" class="btn btn--or">Publier</button>
+          </form>
+
+          <ul class="liste-commentaires">
+            <li>
+              <div class="membre">
+                <span class="avatar" aria-hidden="true">M</span>
+                <p><strong>Membre_3</strong><br><time datetime="2026-10-24">24 octobre 2026</time></p>
+                <span class="a-teste">A testé la recette</span>
+              </div>
+              <p class="commentaire">Rassasiant et léger. J'ai ajouté du chou rouge.</p>
+              <div class="votes">
+                <button type="button" class="btn btn--contour" aria-label="Utile">▲ Utile</button>
+                <button type="button" class="btn btn--contour" aria-label="Pas utile">▼</button>
+              </div>
+            </li>
+          </ul>
+        </section>
+
+      </div>
+    </article>
+  </main>
+
+  <!-- Pied de page commun (plus tard footer.php) -->
+  <footer class="pied">
+    <p>© 2026 La Note Gourmande · Recettes du monde</p>
+  </footer>
+
+</body>
+
+</html>

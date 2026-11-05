@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Magret de canard sauce aux cerises — La Note Gourmande</title>
+  <meta name="description" content="Un plat de fête : un magret à la peau croustillante et rosé à cœur, relevé d&#x27;une sauce aigre-douce aux cerises et au balsamique.">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/image/la-note-gourmande-favicon/favicon-32.png">
+  <link rel="apple-touch-icon" href="assets/image/la-note-gourmande-favicon/apple-touch-icon.png">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="recette.css">
+  <script src="js/site.js"></script>
+</head>
+
+<body>
+
+  <a class="lien-evitement" href="#contenu">Aller au contenu</a>
+
+  <!-- En-tête commun (plus tard header.php). Pas de loupe ici : cette page n'a pas de champ de recherche. -->
+  <header class="entete">
+    <a href="index.html" class="entete__logo"><img src="assets/image/logo/la-note-gourmande-noir-or_v1.png"
+        alt="La Note Gourmande, accueil" height="48"></a>
+    <nav class="entete__nav" aria-label="Menu principal">
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="catalogue.html">Recettes</a></li>
+      </ul>
+    </nav>
+    <button type="button" class="theme-btn" aria-label="Passer au thème clair">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <circle cx="12" cy="12" r="9" />
+        <path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor" />
+      </svg>
+    </button>
+    <button type="button" class="burger" aria-label="Ouvrir le menu" aria-haspopup="dialog"
+      aria-controls="menu">☰</button>
+  </header>
+
+  <dialog id="menu" class="menu" aria-label="Menu principal">
+    <div class="menu__entete">
+      <strong>Menu</strong>
+      <button type="button" class="menu__fermer" aria-label="Fermer le menu">✕</button>
+    </div>
+    <ul>
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="catalogue.html">Recettes</a></li>
+    </ul>
+  </dialog>
+
+  <main id="contenu" class="conteneur">
+
+    <nav class="fil-ariane" aria-label="Fil d'Ariane">
+      <ol>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="catalogue.html">Recettes</a></li>
+        <li><a href="recette-magret-canard-cerises.html" aria-current="page">Magret de canard sauce aux cerises</a></li>
+      </ol>
+    </nav>
+
+    <article class="recette">
+
+      <!-- Données d'exemple. Photo : voir assets/image/recettes/CREDITS.md -->
+      <header class="recette__tete">
+        <figure class="recette__photo">
+          <img class="photo" src="assets/image/recettes/magret-canard-cerises.webp" alt="Canard rôti à la peau dorée, nappé de cerises, avec des pommes de terre rôties et des choux de Bruxelles" width="1000" height="750">
+          <figcaption>Photo : <a href="https://commons.wikimedia.org/wiki/File:Roast_Duck_Breast_%26_Leg_with_cherry_sauce,_roast_parsnips,_potatoes,_sprouts_and_gravy._(45566092424).jpg">CharmaineZoe&#x27;s Marvelous Melange from England</a>, <a href="https://creativecommons.org/licenses/by/2.0">CC BY 2.0</a>, via Wikimedia Commons</figcaption>
+        </figure>
+
+        <div class="recette__titre">
+          <p class="recette__cats">
+            <span class="badge" data-cat="gastronomique">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" aria-hidden="true">
+                <path d="M3 12h18a9 9 0 0 1-18 0z" />
+                <path d="M8 8c0-2 2-2 2-4M14 8c0-2 2-2 2-4" />
+              </svg>
+              Gastronomique
+            </span>
+            <a href="catalogue.html?region[]=europe">Française</a>
+          </p>
+
+          <h1>Magret de canard sauce aux cerises</h1>
+
+          <p class="recette__auteur">Par <a href="#">Blogueur B</a> · <time datetime="2026-10-14">14 octobre 2026</time></p>
+
+          <p class="recette__note">
+            <span class="etoiles" role="img" aria-label="4,7 sur 5">★★★★★</span>
+            4,7 (9) · <a href="#commentaires">2 commentaires</a>
+          </p>
+
+          <div class="actions">
+            <a class="btn btn--or" href="#ingredients">Aller à la recette ↓</a>
+            <button type="button" class="rond" aria-label="Imprimer la recette"><span class="icone icone--imprimer"
+                aria-hidden="true"></span></button>
+            <button type="button" class="rond" aria-label="Ajouter aux favoris" aria-pressed="false"><span
+                class="icone icone--coeur" aria-hidden="true"></span></button>
+          </div>
+        </div>
+      </header>
+
+      <dl class="stats">
+        <div>
+          <dt>Préparation</dt>
+          <dd>20 <small>min</small></dd>
+        </div>
+        <div>
+          <dt>Cuisson</dt>
+          <dd>25 <small>min</small></dd>
+        </div>
+        <div>
+          <dt>Total</dt>
+          <dd>45 <small>min</small></dd>
+        </div>
+        <div>
+          <dt>Portions</dt>
+          <dd>4 <small>pers.</small></dd>
+        </div>
+        <div>
+          <dt>Difficulté</dt>
+          <dd>Moyen</dd>
+        </div>
+        <div>
+          <dt>Coût</dt>
+          <dd>€€€ <span class="sr-only">(élevé)</span></dd>
+        </div>
+      </dl>
+
+      <section class="intro" aria-labelledby="t-intro">
+        <h2 id="t-intro" class="etiquette">Intro du blogueur</h2>
+        <p>Un plat de fête : un magret à la peau croustillante et rosé à cœur, relevé d'une sauce aigre-douce aux cerises et au balsamique.</p>
+      </section>
+
+      <div class="recette__corps">
+
+        <section class="ingredients carte-bloc" id="ingredients" aria-labelledby="t-ingredients">
+          <div class="ingredients__entete">
+            <h2 id="t-ingredients">Ingrédients</h2>
+            <div class="portions" role="group" aria-label="Nombre de portions">
+              <button type="button" class="rond" aria-label="Une portion de moins">−</button>
+              <output>4 portions</output>
+              <button type="button" class="rond" aria-label="Une portion de plus">+</button>
+            </div>
+          </div>
+
+          <h3 class="etiquette">Magret</h3>
+          <ul class="liste-ingredients">
+            <li><label><input type="checkbox"> 2 magrets de canard (environ 350 g chacun)</label></li>
+            <li><label><input type="checkbox"> Sel, poivre</label></li>
+          </ul>
+
+          <h3 class="etiquette">Sauce</h3>
+          <ul class="liste-ingredients">
+            <li><label><input type="checkbox"> 250 g de cerises dénoyautées</label></li>
+            <li><label><input type="checkbox"> 2 échalotes</label></li>
+            <li><label><input type="checkbox"> 10 cl de vinaigre balsamique</label></li>
+            <li><label><input type="checkbox"> 15 cl de fond de veau</label></li>
+            <li><label><input type="checkbox"> 20 g de beurre froid</label></li>
+          </ul>
+
+          <h3 class="etiquette">Accompagnement</h3>
+          <ul class="liste-ingredients">
+            <li><label><input type="checkbox"> 600 g de pommes de terre grenailles</label></li>
+            <li><label><input type="checkbox"> 1 c. à soupe de persil</label></li>
+          </ul>
+        </section>
+
+        <section class="preparation" aria-labelledby="t-preparation">
+          <h2 id="t-preparation">Préparation</h2>
+          <ol class="etapes">
+            <li>
+              <span class="num" aria-hidden="true">1</span>
+              <h3>Préparer les magrets</h3>
+              <p>Quadrillez la peau au couteau sans toucher la chair, puis salez et poivrez.</p>
+            </li>
+            <li>
+              <span class="num" aria-hidden="true">2</span>
+              <h3>Cuire côté peau</h3>
+              <p>Posez les magrets côté peau dans une poêle froide, à feu moyen, 8 à 10 minutes jusqu'à ce que la peau soit dorée. Versez la graisse au fur et à mesure.</p>
+            </li>
+            <li>
+              <span class="num" aria-hidden="true">3</span>
+              <h3>Retourner et reposer</h3>
+              <p>Retournez les magrets 4 minutes, puis laissez-les reposer 10 minutes sous une feuille d'aluminium.</p>
+            </li>
+            <li>
+              <span class="num" aria-hidden="true">4</span>
+              <h3>Faire la sauce</h3>
+              <p>Dans la même poêle, faites suer les échalotes, déglacez au balsamique, ajoutez les cerises et le fond de veau. Laissez réduire 8 minutes, puis montez au beurre froid.</p>
+            </li>
+            <li>
+              <span class="num" aria-hidden="true">5</span>
+              <h3>Cuire les pommes de terre</h3>
+              <p>Faites-les cuire 15 minutes à l'eau, puis rissolez-les dans un peu de graisse de canard et parsemez de persil.</p>
+            </li>
+            <li>
+              <span class="num" aria-hidden="true">6</span>
+              <h3>Dresser</h3>
+              <p>Tranchez les magrets en biais et nappez de sauce.</p>
+            </li>
+          </ol>
+        </section>
+      </div>
+
+      <section class="astuces carte-bloc" aria-labelledby="t-astuces">
+        <h2 id="t-astuces" class="etiquette">Astuces et variantes</h2>
+        <p>Démarrer à froid, côté peau, fait fondre la graisse sans brûler la peau. En hiver, les cerises surgelées donnent le même résultat.</p>
+      </section>
+
+      <section class="tags" aria-labelledby="t-tags">
+        <h2 id="t-tags" class="tags__titre">Tags</h2>
+        <ul>
+          <li><a href="catalogue.html?tag[]=fete">Fête</a></li>
+          <li><a href="catalogue.html?tag[]=viande">Viande</a></li>
+          <li><a href="catalogue.html?tag[]=sans-gluten">Sans gluten</a></li>
+        </ul>
+      </section>
+
+      <div class="communaute">
+
+        <section class="notation carte-bloc" aria-labelledby="t-notation">
+          <h2 id="t-notation">Vous l'avez testée ? Notez-la</h2>
+          <div class="notation__etoiles" role="group" aria-label="Votre note sur 5">
+            <button type="button" class="rond" aria-pressed="false" aria-label="1 étoile">☆</button>
+            <button type="button" class="rond" aria-pressed="false" aria-label="2 étoiles">☆</button>
+            <button type="button" class="rond" aria-pressed="false" aria-label="3 étoiles">☆</button>
+            <button type="button" class="rond" aria-pressed="false" aria-label="4 étoiles">☆</button>
+            <button type="button" class="rond" aria-pressed="false" aria-label="5 étoiles">☆</button>
+          </div>
+          <p class="notation__moyenne">Moyenne <strong>4,7 / 5</strong> sur 9 notes ·
+            <a href="#">Connectez-vous</a> pour noter
+          </p>
+        </section>
+
+        <section class="commentaires" id="commentaires" aria-labelledby="t-commentaires">
+          <div class="commentaires__entete">
+            <h2 id="t-commentaires">Commentaires (2)</h2>
+            <div class="tri-commentaires" role="group" aria-label="Trier les commentaires">
+              <button type="button" class="btn btn--or" aria-pressed="true">Plus utiles</button>
+              <button type="button" class="btn btn--contour" aria-pressed="false">Plus récents</button>
+            </div>
+          </div>
+
+          <form class="formulaire-commentaire carte-bloc" action="#" method="post">
+            <label for="commentaire">Votre commentaire</label>
+            <textarea id="commentaire" name="commentaire" placeholder="Votre essai, une astuce..."></textarea>
+            <label class="case"><input type="checkbox" name="teste"> J'ai testé cette recette</label>
+            <button type="submit" class="btn btn--or">Publier</button>
+          </form>
+
+          <ul class="liste-commentaires">
+            <li>
+              <div class="membre">
+                <span class="avatar" aria-hidden="true">M</span>
+                <p><strong>Membre_1</strong><br><time datetime="2026-10-17">17 octobre 2026</time></p>
+                <span class="a-teste">A testé la recette</span>
+              </div>
+              <p class="commentaire">Peau croustillante, sauce parfaite. Un plat de restaurant.</p>
+              <div class="votes">
+                <button type="button" class="btn btn--contour" aria-label="Utile">▲ Utile</button>
+                <button type="button" class="btn btn--contour" aria-label="Pas utile">▼</button>
+              </div>
+            </li>
+            <li>
+              <div class="membre">
+                <span class="avatar" aria-hidden="true">M</span>
+                <p><strong>Membre_4</strong><br><time datetime="2026-10-19">19 octobre 2026</time></p>
+              </div>
+              <p class="commentaire">Excellent, mais la réduction de la sauce demande un peu de patience.</p>
+              <div class="votes">
+                <button type="button" class="btn btn--contour" aria-label="Utile">▲ Utile</button>
+                <button type="button" class="btn btn--contour" aria-label="Pas utile">▼</button>
+              </div>
+            </li>
+          </ul>
+        </section>
+
+      </div>
+    </article>
+  </main>
+
+  <!-- Pied de page commun (plus tard footer.php) -->
+  <footer class="pied">
+    <p>© 2026 La Note Gourmande · Recettes du monde</p>
+  </footer>
+
+</body>
+
+</html>
