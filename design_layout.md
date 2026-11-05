@@ -121,3 +121,15 @@ Le contenu du travail de Quentin (branche `mobil_first_home_page`, commit « foo
 - **Pas repris** : le texte « La Note Gourmande » à côté du logo (le logo le contient déjà), la barre fixe en haut, le menu en case à cocher (remplacé par le `<dialog>`), les couleurs en dur.
 - **Liens `#`** : Qui sommes-nous ?, Se connecter, Nous contacter, Règles de la communauté, Mentions légales, Confidentialité, Cookies : pages à créer.
 - Appliqué aux 11 pages (accueil, catalogue, fiche modèle et 8 fiches). Vérifié à 400 et 1440 px : aucun débordement, aucun texte sous 14 px, aucune cible sous 44 px, console vide.
+
+---
+
+# Hero de l'accueil : recette à la une (2026-11-05)
+
+`index.html` a maintenant un hero : l'accroche (titre, texte, bouton « Voir toutes les recettes ») à gauche et une **recette à la une** à droite.
+
+- **Recette choisie** : la tarte tatin (`recette-tarte-tatin.html`), la mieux notée des huit (4,8 sur 21 notes) et la plus récente. Choix fait à la main pour l'instant ; avec PHP, ce sera la recette la mieux notée ou une recette choisie par l'admin.
+- **Mise en page** : desktop, accroche et recette à 1 : 1,618 (38,2 % et 61,8 %), mesuré à 423 px et 684 px à 1440 px, photo en 4:3 ; mobile, accroche puis recette en colonne.
+- **Carte « À la une »** : photo, pastille « À la une » (or, texte noir), badge de catégorie, titre, note, durée, origine, deux phrases d'intro et bouton « Voir la recette ». Toute la carte est cliquable (lien étiré sur le titre), comme les cartes du catalogue.
+- **Vérifié** : 1440 et 400 px, clair et sombre, aucun débordement, aucun texte sous 14 px, aucune cible sous 44 px, console vide.
+- **Crédit de la photo** : sur la fiche de la recette (photo CC0, aucun crédit obligatoire).

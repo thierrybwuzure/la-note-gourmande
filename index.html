@@ -49,11 +49,39 @@
 
 <main id="contenu" class="conteneur">
 
-  <section class="accroche" aria-labelledby="titre-accueil">
-    <h1 id="titre-accueil">Les cuisines du monde, une recette à la fois</h1>
-    <p>Deux blogueurs testent chaque plat avant de le publier. Vous le cuisinez, vous le notez, vous dites ce qu'il faut changer.</p>
-    <a class="btn btn--or" href="catalogue.html">Voir toutes les recettes</a>
-  </section>
+  <!-- Hero : accroche à gauche, recette à la une à droite (1 : 1,618). Recette choisie : la mieux notée (tarte tatin, 4,8 sur 21 notes). -->
+  <div class="hero">
+    <section class="accroche" aria-labelledby="titre-accueil">
+      <h1 id="titre-accueil">Les cuisines du monde, une recette à la fois</h1>
+      <p>Deux blogueurs testent chaque plat avant de le publier. Vous le cuisinez, vous le notez, vous dites ce qu'il faut changer.</p>
+      <a class="btn btn--or" href="catalogue.html">Voir toutes les recettes</a>
+    </section>
+
+    <article class="une" aria-labelledby="titre-une">
+      <img class="photo" src="assets/image/recettes/tarte-tatin.webp" alt="Part de tarte tatin caramélisée, avec une boule de glace à la vanille" width="1000" height="750">
+      <p class="une__etiquette">À la une</p>
+      <div class="une__texte">
+        <span class="badge" data-cat="desserts-patisserie">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M3 12h18a9 9 0 0 1-18 0z" />
+            <path d="M8 8c0-2 2-2 2-4M14 8c0-2 2-2 2-4" />
+          </svg>
+          Desserts &amp; pâtisserie
+        </span>
+        <h2 class="une__titre" id="titre-une"><a href="recette-tarte-tatin.html">Tarte tatin</a></h2>
+        <p class="carte__meta">
+          <span class="carte__note">
+            <span class="etoiles" aria-hidden="true">★★★★★</span>
+            <strong aria-hidden="true">4,8</strong> (21)
+            <span class="sr-only">Note moyenne : 4,8 sur 5, 21 notes</span>
+          </span>
+          65 min · Française
+        </p>
+        <p class="une__intro">La tarte renversée des sœurs Tatin : des pommes confites dans un caramel au beurre salé, sous une pâte feuilletée bien dorée. À servir tiède.</p>
+        <a class="btn btn--contour" href="recette-tarte-tatin.html" aria-label="Voir la recette : tarte tatin">Voir la recette</a>
+      </div>
+    </article>
+  </div>
 
   <section aria-labelledby="titre-atouts">
     <h2 id="titre-atouts" class="sr-only">Pourquoi La Note Gourmande</h2>
