@@ -3,6 +3,16 @@
 // sans JavaScript, le panneau de filtres reste affiché dans la page.
 document.documentElement.classList.add('js');
 
+// Thème : le choix fait avec le bouton est gardé dans localStorage, sinon on suit le réglage du système.
+// Posé ici, avant le premier affichage, pour éviter un flash de la mauvaise couleur.
+// Sans JavaScript, c'est la règle prefers-color-scheme de style.css qui s'applique.
+function themeChoisi() {
+  try { const t = localStorage.getItem('theme'); if (t === 'light' || t === 'dark') return t; } catch (e) { /* stockage bloqué */ }
+  return null;
+}
+document.documentElement.dataset.theme =
+  themeChoisi() || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+
 document.addEventListener('DOMContentLoaded', () => {
   const desktop = window.matchMedia('(min-width: 1024px)');
 
@@ -15,6 +25,23 @@ document.addEventListener('DOMContentLoaded', () => {
     menu.addEventListener('click', (e) => { if (e.target === menu) menu.close(); });   // clic sur le fond
     desktop.addEventListener('change', (e) => { if (e.matches && menu.open) menu.close(); });
   }
+
+  // ---- Bouton de thème (clair / sombre) ----
+  const boutonsTheme = document.querySelectorAll('.theme-btn');
+  function majBoutonsTheme() {
+    const clair = document.documentElement.dataset.theme === 'light';
+    boutonsTheme.forEach((b) => {
+      b.setAttribute('aria-label', clair ? 'Passer au thème sombre' : 'Passer au thème clair');
+      b.title = b.getAttribute('aria-label');
+    });
+  }
+  boutonsTheme.forEach((b) => b.addEventListener('click', () => {
+    const suivant = document.documentElement.dataset.theme === 'light' ? 'dark' : 'light';
+    document.documentElement.dataset.theme = suivant;
+    try { localStorage.setItem('theme', suivant); } catch (e) { /* stockage bloqué : le choix vaut pour cette page seulement */ }
+    majBoutonsTheme();
+  }));
+  majBoutonsTheme();
 
   // ---- La loupe de l'en-tête place le curseur dans le champ de recherche ----
   const champ = document.getElementById('q');
