@@ -26,59 +26,36 @@
   --s0: 1rem;
   --s1: 1.618rem; --s2: 2.618rem; --s3: 4.236rem; --s4: 6.854rem;
 
-  /* mode clair */
-  --fond: #FBF8F1;          /* ivoire */
-  --surface: #F2ECDF;       /* parchemin */
-  --bordure: #E0D8C6;       /* sable, décoratif */
+  /* thème sombre uniquement (décision de l'équipe, 2026-11-05) */
+  color-scheme: dark;
+  --fond: #151412;
+  --surface: #211F1B;
+  --bordure: #3A3630;       /* décoratif */
   --champ: #8C8478;         /* contour des champs et boutons (3:1 minimum) */
-  --texte: #151412;
-  --texte-2: #5E5A53;
-  --or: #D8B23C;            /* boutons, éléments actifs, jamais en texte */
+  --texte: #F5F2EA;
+  --texte-2: #A8A39A;
+  --or: #D8B23C;            /* boutons, éléments actifs */
   --texte-sur-or: #151412;
   --or-survol: #F4D46A;
-  --lien: #8A6D12;          /* or foncé : liens et contour de focus */
-  --lien-survol: #151412;
-  --etoile: #8A6D12;        /* étoiles de note : or foncé en clair (l'or pur fait 1,9:1) */
-  --focus: #8A6D12;
+  --lien: #D8B23C;          /* liens et contour de focus */
+  --lien-survol: #F4D46A;
+  --etoile: #D8B23C;        /* étoiles de note */
+  --focus: #D8B23C;
   --noir: #151412;
   --blanc-casse: #F5F2EA;
-  --texte-badge: #FFFFFF;
+  --texte-badge: #151412;
 
-  --cat-fast-food: #4A5560;
-  --cat-gastronomique: #5B2A4E;
-  --cat-cuisine-maison: #7A5A12;
-  --cat-healthy: #2F6B4F;
-  --cat-desserts-patisserie: #A8325A;
-  --cat-en-cas: #9C4A1E;
-  --cat-street-food: #2E4A7D;
-  --cat-entrees: #1A5F6B;
+  --cat-fast-food: #AEB8C2;
+  --cat-gastronomique: #D49BC4;
+  --cat-cuisine-maison: #D9B45E;
+  --cat-healthy: #7CC4A0;
+  --cat-desserts-patisserie: #EE8FAE;
+  --cat-en-cas: #E8A27A;
+  --cat-street-food: #94B3E8;
+  --cat-entrees: #86CBD6;
 
   --rayon: 8px;             /* boutons : 8 px (cahier des charges) */
   --cible: 2.75rem;         /* zone cliquable minimale : 44 px */
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --fond: #151412;
-    --surface: #211F1B;
-    --bordure: #3A3630;
-    --texte: #F5F2EA;
-    --texte-2: #A8A39A;
-    --lien: #D8B23C;
-    --lien-survol: #F4D46A;
-    --etoile: #D8B23C;
-    --focus: #D8B23C;
-    --texte-badge: #151412;
-
-    --cat-fast-food: #AEB8C2;
-    --cat-gastronomique: #D49BC4;
-    --cat-cuisine-maison: #D9B45E;
-    --cat-healthy: #7CC4A0;
-    --cat-desserts-patisserie: #EE8FAE;
-    --cat-en-cas: #E8A27A;
-    --cat-street-food: #94B3E8;
-    --cat-entrees: #86CBD6;
-  }
 }
 
 /* ---------- Base ---------- */
