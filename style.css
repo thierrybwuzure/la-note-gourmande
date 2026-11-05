@@ -154,6 +154,9 @@ h3 { font-weight: 700; font-size: 1.0625rem; }   /* 17 px */
 .entete__logo { margin-right: auto; display: block; }
 .entete__logo img { height: 3rem; width: auto; }
 .entete__nav { display: none; }
+.entete .entete__connexion { display: none; align-items: center; min-height: var(--cible); padding: 0 var(--s0);
+                             border: 2px solid var(--or); border-radius: var(--rayon); color: var(--or); font-weight: 700; }
+.entete .entete__connexion:hover { background: var(--or); color: var(--texte-sur-or); }
 .entete__nav ul { list-style: none; margin: 0; padding: 0; display: flex; gap: var(--s1); }
 .entete__nav a { display: inline-flex; align-items: center; min-height: var(--cible); font-weight: 500; }
 .entete__nav [aria-current="page"] { color: var(--or); font-weight: 700; }
@@ -269,8 +272,20 @@ img.photo { width: 100%; height: auto; object-fit: cover; }   /* vraie photo : r
 .atouts p { margin: var(--s-2) 0 0; color: var(--texte-2); }
 
 /* ---------- Pied de page ---------- */
-.pied { padding: var(--s1) var(--s0); background: var(--surface); color: var(--texte-2); font-size: .875rem; }
+/* Pied de page : toujours sombre, comme l'en-tête (logo pour fond noir). Liens et mentions repris de la branche de Quentin. */
+.pied { padding: var(--s2) var(--s0) var(--s1); background: var(--noir); color: #A8A39A; font-size: .875rem; }
+.pied a { color: var(--blanc-casse); text-decoration: none; }
+.pied a:hover { color: var(--or-survol); text-decoration: underline; }
+.pied :focus-visible { outline-color: var(--or); }
 .pied p { margin: 0; }
+.pied ul { list-style: none; margin: 0; padding: 0; }
+.pied__haut { display: flex; flex-direction: column; gap: var(--s0); padding-bottom: var(--s1); border-bottom: 1px solid #3A3630; }
+.pied__logo { display: block; width: fit-content; }
+.pied__logo img { height: var(--s3); width: auto; }
+.pied__liens a { display: inline-flex; align-items: center; min-height: var(--cible); font-size: 1rem; }
+.pied__bas { display: flex; flex-direction: column; gap: var(--s-1); padding-top: var(--s1); }
+.pied__legal { display: flex; flex-wrap: wrap; gap: 0 var(--s1); }
+.pied__legal a { display: inline-flex; align-items: center; min-height: var(--cible); }
 
 /* ==========================================================================
    TABLETTE (600 px et plus) : cartes en grille de 2
@@ -293,7 +308,11 @@ img.photo { width: 100%; height: auto; object-fit: cover; }   /* vraie photo : r
   /* en-tête et pied de page alignés sur la colonne de contenu (75 rem) */
   .entete { padding-inline: max(var(--s1), calc((100% - 75rem) / 2 + var(--s1))); }
   .pied { padding-inline: max(var(--s1), calc((100% - 75rem) / 2 + var(--s1))); }
+  .pied__haut { flex-direction: row; align-items: center; justify-content: space-between; }
+  .pied__liens { display: flex; gap: var(--s1); }
+  .pied__bas { flex-direction: row; align-items: center; justify-content: space-between; }
   .entete__nav { display: block; }
+  .entete .entete__connexion { display: inline-flex; }
   .entete__loupe { display: none; }               /* le champ de recherche est déjà visible */
   .burger { display: none; }
   .conteneur { max-width: 75rem; margin: 0 auto; padding: var(--s2) var(--s1) var(--s3); }

@@ -25,8 +25,10 @@
       <ul>
         <li><a href="index.html">Accueil</a></li>
         <li><a href="catalogue.html">Recettes</a></li>
+        <li><a href="#">Qui sommes-nous ?</a></li>
       </ul>
     </nav>
+    <a href="#" class="entete__connexion">Se connecter</a>
     <button type="button" class="theme-btn" aria-label="Passer au thème clair">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
         <circle cx="12" cy="12" r="9" />
@@ -45,6 +47,8 @@
     <ul>
       <li><a href="index.html">Accueil</a></li>
       <li><a href="catalogue.html">Recettes</a></li>
+      <li><a href="#">Qui sommes-nous ?</a></li>
+      <li><a href="#">Se connecter</a></li>
     </ul>
   </dialog>
 
@@ -268,7 +272,25 @@
 
   <!-- Pied de page commun (plus tard footer.php) -->
   <footer class="pied">
-    <p>© 2026 La Note Gourmande · Recettes du monde</p>
+    <div class="pied__haut">
+      <a href="index.html" class="pied__logo"><img src="assets/image/logo/la-note-gourmande-noir-or_v1.png" alt="La Note Gourmande, accueil" height="68"></a>
+      <nav aria-label="Pied de page">
+        <ul class="pied__liens">
+          <li><a href="catalogue.html">Recettes</a></li>
+          <li><a href="#">Qui sommes-nous ?</a></li>
+          <li><a href="#">Nous contacter</a></li>
+          <li><a href="#">Règles de la communauté</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="pied__bas">
+      <p>© 2026 La Note Gourmande · Recettes du monde</p>
+      <ul class="pied__legal" aria-label="Informations légales">
+        <li><a href="#">Mentions légales</a></li>
+        <li><a href="#">Confidentialité</a></li>
+        <li><a href="#">Cookies</a></li>
+      </ul>
+    </div>
   </footer>
 
 </body>

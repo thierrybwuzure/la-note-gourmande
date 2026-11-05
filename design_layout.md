@@ -109,3 +109,15 @@ Les huit recettes d'exemple ont une vraie photo : `assets/image/recettes/<nom>.w
 - **Alt** : chaque `<img>` a un texte alternatif en français qui décrit le plat. Fiche : image chargée tout de suite ; catalogue : `loading="lazy"`.
 - **CSS** : `img.photo` (dans `style.css`) remplit le cadre 4:3 comme le faisait le bloc vide ; `.recette__photo figcaption` pour le crédit (`recette.css`).
 - **Pas encore de photo** : « Banh mi » et « Falafels » (blocs vides) et `recette.html`.
+
+---
+
+# En-tête et pied de page de Quentin, intégrés (2026-11-05)
+
+Le contenu du travail de Quentin (branche `mobil_first_home_page`, commit « footer/header ») est repris dans notre en-tête et notre pied de page, sans fusionner sa branche (elle part de l'ancienne base et son CSS remplaçait tout `style.css`).
+
+- **Menu** (en-tête et burger) : Accueil, Recettes, **Qui sommes-nous ?** (lien `#`, page à créer) et **Se connecter** (bouton doré dans l'en-tête à partir de 1024 px, dans le menu burger en dessous).
+- **Pied de page** : logo, liens (Recettes, Qui sommes-nous ?, Nous contacter, Règles de la communauté), copyright, mentions (Mentions légales, Confidentialité, Cookies). Toujours sombre comme l'en-tête. Desktop : deux lignes alignées sur la colonne de 75 rem ; mobile : en colonne. Cibles de 44 px, texte de 14 px minimum.
+- **Pas repris** : le texte « La Note Gourmande » à côté du logo (le logo le contient déjà), la barre fixe en haut, le menu en case à cocher (remplacé par le `<dialog>`), les couleurs en dur.
+- **Liens `#`** : Qui sommes-nous ?, Se connecter, Nous contacter, Règles de la communauté, Mentions légales, Confidentialité, Cookies : pages à créer.
+- Appliqué aux 11 pages (accueil, catalogue, fiche modèle et 8 fiches). Vérifié à 400 et 1440 px : aucun débordement, aucun texte sous 14 px, aucune cible sous 44 px, console vide.
