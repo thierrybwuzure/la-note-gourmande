@@ -19,6 +19,8 @@
              letter-spacing: .08em; text-transform: uppercase; color: var(--texte-2); }
 
 /* ---------- En-tête de la fiche ---------- */
+.recette__photo { margin: 0; }
+.recette__photo figcaption { margin-top: var(--s-1); font-size: .875rem; color: var(--texte-2); }   /* crédit de la photo (licence) */
 .recette__titre { display: flex; flex-direction: column; align-items: flex-start; gap: var(--s-1); }
 .recette__cats { margin: 0; display: flex; flex-wrap: wrap; align-items: center; gap: var(--s-1) var(--s0); }
 .recette__auteur, .recette__note { margin: 0; }

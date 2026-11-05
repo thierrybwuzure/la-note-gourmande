@@ -95,3 +95,17 @@ Huit fiches recette d'exemple, une par catégorie, générées sur le modèle de
 - **Données d'exemple** : textes, notes et commentaires sont inventés pour le prototype (noms `Membre_n`). Photos : blocs 4:3 à remplacer par `<img>`. Aucune note n'est cochée par défaut dans le bloc « Notez-la ».
 - **`recette.html`** reste le modèle générique de Raphaël (« Titre de la recette »), non lié au catalogue.
 - **Quand le PHP arrive** : une seule page `recette.php?id=` remplacera les huit fichiers.
+
+---
+
+# Photos des recettes (2026-11-05)
+
+Les huit recettes d'exemple ont une vraie photo : `assets/image/recettes/<nom>.webp` (4:3, 1000 × 750 px ou 960 × 720 px, 60 à 130 Ko).
+
+- **Origine et licences** : photos libres de droit de Wikimedia Commons (CC0, domaine public, CC BY, CC BY-SA), choisies une à une pour correspondre au plat. Auteur, licence et lien source de chacune sont dans `assets/image/recettes/CREDITS.md`.
+- **Crédit visible** : chaque fiche affiche sous la photo « Photo : auteur, licence, via Wikimedia Commons » (obligatoire pour CC BY et CC BY-SA, gardé aussi pour CC0). Les cartes du catalogue n'affichent pas le crédit : il est sur la fiche vers laquelle elles mènent.
+- **Retouches** : recadrage centré en 4:3 et conversion en WebP. Pas d'autre modification.
+- **Réserve** : « Bowl de riz » (CC BY-SA 2.0) et « Houmous » (CC BY-SA 4.0) sont sous licence avec partage dans les mêmes conditions : si on retouche ces deux images, la version retouchée garde la même licence.
+- **Alt** : chaque `<img>` a un texte alternatif en français qui décrit le plat. Fiche : image chargée tout de suite ; catalogue : `loading="lazy"`.
+- **CSS** : `img.photo` (dans `style.css`) remplit le cadre 4:3 comme le faisait le bloc vide ; `.recette__photo figcaption` pour le crédit (`recette.css`).
+- **Pas encore de photo** : « Banh mi » et « Falafels » (blocs vides) et `recette.html`.
